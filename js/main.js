@@ -1,0 +1,516 @@
+const propertiesData = [
+    { id: 1, title: "SUPER NICE VILLA", price: 300000, area: 120, beds: 5, baths: 2, garages: 1, image: "assets/img/content/villa-1.webp", city: "Miami", status: "sale", date: "2023-01-01" },
+    { id: 2, title: "SUPER NICE VILLA", price: 350000, area: 150, beds: 4, baths: 3, garages: 2, image: "assets/img/content/villa-2.webp", city: "Coral Gables", status: "sale", date: "2023-02-15" },
+    { id: 3, title: "SUPER NICE VILLA", price: 280000, area: 110, beds: 3, baths: 2, garages: 1, image: "assets/img/content/villa-3.webp", city: "Miami", status: "sale", date: "2023-03-10" },
+    { id: 4, title: "SUPER NICE VILLA", price: 420000, area: 200, beds: 6, baths: 4, garages: 2, image: "assets/img/content/villa-1.webp", city: "Coral Gables", status: "sale", date: "2023-01-20" },
+    { id: 5, title: "SUPER NICE VILLA", price: 310000, area: 130, beds: 4, baths: 2, garages: 1, image: "assets/img/content/villa-2.webp", city: "Miami", status: "sale", date: "2023-04-05" },
+    { id: 6, title: "SUPER NICE VILLA", price: 290000, area: 115, beds: 3, baths: 2, garages: 1, image: "assets/img/content/villa-3.webp", city: "Coral Gables", status: "sale", date: "2023-05-12" },
+    { id: 7, title: "SUPER NICE VILLA", price: 500000, area: 250, beds: 5, baths: 4, garages: 3, image: "assets/img/content/villa-1.webp", city: "Miami", status: "sale", date: "2023-06-01" },
+    { id: 8, title: "SUPER NICE VILLA", price: 330000, area: 140, beds: 4, baths: 2, garages: 1, image: "assets/img/content/villa-2.webp", city: "Coral Gables", status: "sale", date: "2023-02-28" },
+    { id: 9, title: "SUPER NICE VILLA", price: 275000, area: 105, beds: 3, baths: 1, garages: 1, image: "assets/img/content/villa-3.webp", city: "Miami", status: "sale", date: "2023-07-15" },
+    { id: 10, title: "SUPER NICE VILLA", price: 380000, area: 160, beds: 4, baths: 3, garages: 2, image: "assets/img/content/villa-1.webp", city: "Miami", status: "sale", date: "2023-08-05" },
+    { id: 11, title: "SUPER NICE VILLA", price: 250000, area: 90, beds: 2, baths: 1, garages: 1, image: "assets/img/content/villa-2.webp", city: "Coral Gables", status: "sale", date: "2023-09-12" },
+    { id: 12, title: "SUPER NICE VILLA", price: 600000, area: 300, beds: 6, baths: 5, garages: 3, image: "assets/img/content/villa-3.webp", city: "Miami", status: "sale", date: "2023-10-20" },
+    { id: 13, title: "SUPER NICE VILLA", price: 320000, area: 135, beds: 4, baths: 2, garages: 2, image: "assets/img/content/villa-1.webp", city: "Coral Gables", status: "sale", date: "2023-11-01" },
+    { id: 14, title: "SUPER NICE VILLA", price: 450000, area: 210, beds: 5, baths: 4, garages: 2, image: "assets/img/content/villa-2.webp", city: "Miami", status: "sale", date: "2023-12-15" },
+    { id: 15, title: "SUPER NICE VILLA", price: 295000, area: 118, beds: 3, baths: 2, garages: 1, image: "assets/img/content/villa-3.webp", city: "Coral Gables", status: "sale", date: "2024-01-10" }
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+    const burgerToggle = document.getElementById("burgerToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    if (burgerToggle && mainNav) {
+        burgerToggle.addEventListener("click", () => {
+            burgerToggle.classList.toggle("active");
+            mainNav.classList.toggle("active");
+        });
+    }
+
+    const openModalBtn = document.getElementById("openModalBtn");
+    const modalOverlay = document.getElementById("modalOverlay");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+
+    if (openModalBtn && modalOverlay) {
+        openModalBtn.addEventListener("click", () => {
+            modalOverlay.classList.add("open");
+        });
+
+        closeModalBtn.addEventListener("click", () => {
+            modalOverlay.classList.remove("open");
+        });
+
+        modalOverlay.addEventListener("click", (event) => {
+            if (event.target === modalOverlay) {
+                modalOverlay.classList.remove("open");
+            }
+        });
+    }
+
+    if (typeof Swiper !== 'undefined') {
+        const swiperElement = document.querySelector('.reviews-slider');
+        if (swiperElement) {
+            new Swiper('.reviews-slider', {
+                slidesPerView: 3, 
+                slidesPerGroup: 3,
+                spaceBetween: 30,
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        slidesPerGroup: 1,
+                        spaceBetween: 20
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        slidesPerGroup: 2,
+                        spaceBetween: 30
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        slidesPerGroup: 3,
+                        spaceBetween: 30
+                    }
+                }
+            });
+        }
+    }
+
+    const counters = document.querySelectorAll('.counter-number');
+    const speed = 200;
+
+    const startCounters = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 15);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+    };
+
+    const countersSection = document.querySelector('.counters-section');
+    if (countersSection) {
+        let animated = false;
+        window.addEventListener('scroll', () => {
+            const sectionPos = countersSection.getBoundingClientRect().top;
+            const screenPos = window.innerHeight;
+
+            if (sectionPos < screenPos && !animated) {
+                startCounters();
+                animated = true;
+            }
+        });
+    }
+
+    const propertiesCatalog = document.getElementById("propertiesCatalog");
+    const filterForm = document.getElementById("filterForm");
+    const paginationContainer = document.getElementById("paginationContainer");
+    const itemsPerPageInput = document.getElementById("itemsPerPageInput");
+    
+    let currentProperties = [...propertiesData];
+    let sortDateAsc = true;
+    let sortPriceAsc = true;
+    let currentPage = 1;
+    let itemsPerPage = 12;
+
+    function updateCatalog() {
+        if (!propertiesCatalog) return;
+
+        const totalItems = currentProperties.length;
+        const totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
+
+        if (currentPage > totalPages) currentPage = totalPages;
+        if (currentPage < 1) currentPage = 1;
+
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const paginatedItems = currentProperties.slice(start, end);
+
+        propertiesCatalog.innerHTML = "";
+
+        if (paginatedItems.length === 0) {
+            propertiesCatalog.innerHTML = `<p class="no-results">No properties found.</p>`;
+            if (paginationContainer) paginationContainer.innerHTML = "";
+            return;
+        }
+
+        paginatedItems.forEach(item => {
+            const card = document.createElement("article");
+            card.classList.add("property-card");
+
+            card.innerHTML = `
+                <div class="property-card__img">
+                    <img src="${item.image}" alt="${item.title}">
+                </div>
+                <div class="property-card__content">
+                    <h3><a href="property-single.html?id=${item.id}">${item.title}</a></h3>
+                    <div class="card-divider"></div>
+                    <div class="property-card__meta">
+                        <span class="area"><strong>Area : </strong>${item.area}m</span>
+                        <span class="price">$ ${item.price.toLocaleString()}</span>
+                    </div>
+                    <div class="property-card__icons">
+                        <span>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#a5a5a5"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>
+                            (${item.beds})<span class="pipe">|</span>
+                        </span>
+                        <span>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#a5a5a5"><path d="M20 14V11c0-1.1-.9-2-2-2h-4V6h2V4h-4v5h-2c-1.1 0-2 .9-2 2v3c-1.1 0-2 .9-2 2v3h2v2h2v-2h8v2h2v-2h2v-3c0-1.1-.9-2-2-2z"/></svg>
+                            (${item.baths})<span class="pipe">|</span>
+                        </span>
+                        <span>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#a5a5a5"><path d="M12 3L4 9v2l8-6 8 6V9l-8-6z"/><path d="M16 12H8v6h8v-6zm-2 3h-4v-1h4v1z"/></svg>
+                            (${item.garages})
+                        </span>
+                    </div>
+                </div>
+            `;
+            propertiesCatalog.appendChild(card);
+        });
+
+        renderPagination(totalPages);
+    }
+
+    function renderPagination(totalPages) {
+        if (!paginationContainer) return;
+        paginationContainer.innerHTML = "";
+
+        if (totalPages <= 1) return;
+
+        const prevLi = document.createElement("li");
+        prevLi.innerHTML = `<a href="#" class="prev ${currentPage === 1 ? 'disabled' : ''}">Prev</a>`;
+        prevLi.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (currentPage > 1) {
+                currentPage--;
+                updateCatalog();
+            }
+        });
+        paginationContainer.appendChild(prevLi);
+
+        for (let i = 1; i <= totalPages; i++) {
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="#" class="${i === currentPage ? 'active' : ''}">${i}</a>`;
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                currentPage = i;
+                updateCatalog();
+            });
+            paginationContainer.appendChild(li);
+        }
+
+        const nextLi = document.createElement("li");
+        nextLi.innerHTML = `<a href="#" class="next ${currentPage === totalPages ? 'disabled' : ''}">Next</a>`;
+        nextLi.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (currentPage < totalPages) {
+                currentPage++;
+                updateCatalog();
+            }
+        });
+        paginationContainer.appendChild(nextLi);
+    }
+
+    if (itemsPerPageInput) {
+        itemsPerPageInput.addEventListener("change", (e) => {
+            let val = parseInt(e.target.value);
+            if (isNaN(val) || val < 1) val = 1;
+            itemsPerPage = val;
+            currentPage = 1;
+            updateCatalog();
+        });
+    }
+
+    if (filterForm) {
+        filterForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            
+            const keyword = document.getElementById("searchKeyword").value.toLowerCase();
+            const city = document.getElementById("searchCity").value.toLowerCase();
+            const status = document.getElementById("searchStatus").value.toLowerCase();
+            
+            const minPriceInput = document.getElementById("minPrice");
+            const maxPriceInput = document.getElementById("maxPrice");
+            const minPrice = parseFloat(minPriceInput.value) || 0;
+            let maxPrice = parseFloat(maxPriceInput.value) || Infinity;
+            if (maxPrice >= parseFloat(maxPriceInput.max)) maxPrice = Infinity;
+            
+            const minAreaInput = document.getElementById("minArea");
+            const maxAreaInput = document.getElementById("maxArea");
+            const minArea = parseFloat(minAreaInput.value) || 0;
+            let maxArea = parseFloat(maxAreaInput.value) || Infinity;
+            if (maxArea >= parseFloat(maxAreaInput.max)) maxArea = Infinity;
+            
+            const minBaths = parseFloat(document.getElementById("minBaths").value) || 0;
+            const minBeds = parseFloat(document.getElementById("minBeds").value) || 0;
+
+            currentProperties = propertiesData.filter(item => {
+                const matchesKeyword = item.title.toLowerCase().includes(keyword);
+                const matchesCity = city === "" || item.city.toLowerCase() === city;
+                const matchesStatus = status === "" || item.status.toLowerCase() === status;
+                const matchesPrice = item.price >= minPrice && item.price <= maxPrice;
+                const matchesArea = item.area >= minArea && item.area <= maxArea;
+                const matchesBaths = item.baths >= minBaths;
+                const matchesBeds = item.beds >= minBeds;
+
+                return matchesKeyword && matchesCity && matchesStatus && matchesPrice && matchesArea && matchesBaths && matchesBeds;
+            });
+
+            currentPage = 1;
+            updateCatalog();
+        });
+    }
+
+    if (propertiesCatalog) {
+        updateCatalog();
+    }
+
+    const sortDateBtn = document.getElementById("sortDateBtn");
+    const sortPriceBtn = document.getElementById("sortPriceBtn");
+
+    if (sortDateBtn && sortPriceBtn) {
+        sortDateBtn.addEventListener("click", () => {
+            sortDateAsc = !sortDateAsc;
+            currentProperties.sort((a, b) => {
+                return sortDateAsc ? new Date(a.date) - new Date(b.date) : new Date(b.date) - new Date(a.date);
+            });
+            
+            sortDateBtn.classList.remove("outline");
+            sortPriceBtn.classList.add("outline");
+            
+            if (sortDateAsc) {
+                sortDateBtn.classList.add("asc");
+            } else {
+                sortDateBtn.classList.remove("asc");
+            }
+            
+            currentPage = 1;
+            updateCatalog();
+        });
+
+        sortPriceBtn.addEventListener("click", () => {
+            sortPriceAsc = !sortPriceAsc;
+            currentProperties.sort((a, b) => {
+                return sortPriceAsc ? a.price - b.price : b.price - a.price;
+            });
+            
+            sortPriceBtn.classList.remove("outline");
+            sortDateBtn.classList.add("outline");
+            
+            if (sortPriceAsc) {
+                sortPriceBtn.classList.add("asc");
+            } else {
+                sortPriceBtn.classList.remove("asc");
+            }
+            
+            currentPage = 1;
+            updateCatalog();
+        });
+    }
+
+    const viewListBtn = document.getElementById("viewListBtn");
+    const viewGridBtn = document.getElementById("viewGridBtn");
+
+    if (viewListBtn && viewGridBtn && propertiesCatalog) {
+        viewListBtn.addEventListener("click", () => {
+            viewListBtn.classList.add("active");
+            viewGridBtn.classList.remove("active");
+            propertiesCatalog.classList.add("properties-grid--list");
+            propertiesCatalog.classList.remove("properties-grid--3cols");
+        });
+
+        viewGridBtn.addEventListener("click", () => {
+            viewGridBtn.classList.add("active");
+            viewListBtn.classList.remove("active");
+            propertiesCatalog.classList.add("properties-grid--3cols");
+            propertiesCatalog.classList.remove("properties-grid--list");
+        });
+    }
+
+    const singlePropertyContainer = document.getElementById("singlePropertyDetails");
+    
+    if (singlePropertyContainer && typeof propertiesData !== 'undefined') {
+        const urlParams = new URLSearchParams(window.location.search);
+        const propertyId = parseInt(urlParams.get('id'));
+
+        if (propertyId) {
+            const currentProperty = propertiesData.find(item => item.id === propertyId);
+
+            if (currentProperty) {
+                document.querySelector('.page-banner__title').innerText = currentProperty.title;
+                
+                singlePropertyContainer.innerHTML = `
+                    <div class="prop-gallery">
+                        <div class="prop-gallery__main">
+                            <img src="${currentProperty.image}" alt="${currentProperty.title}">
+                            <div class="prop-gallery__actions">
+                                <button><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></button>
+                                <button><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                            </div>
+                            <button class="prop-gallery__arrow prev"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+                            <button class="prop-gallery__arrow next"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                        </div>
+                        <div class="prop-gallery__thumbs">
+                            <img src="${currentProperty.image}" class="active" alt="Thumb">
+                            <img src="assets/img/content/villa-2.webp" alt="Thumb">
+                            <img src="assets/img/content/villa-3.webp" alt="Thumb">
+                            <img src="${currentProperty.image}" alt="Thumb">
+                        </div>
+                    </div>
+
+                    <div class="prop-header">
+                        <h2 class="prop-title">${currentProperty.title} IN ${currentProperty.city.toUpperCase()}</h2>
+                        <div class="prop-price">$${currentProperty.price.toLocaleString()}</div>
+                    </div>
+
+                    <div class="prop-meta">
+                        <div class="prop-meta__item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l9 9c.36.36.86.59 1.41.59s1.05-.23 1.41-.59l7-7c.36-.36.59-.86.59-1.41s-.23-1.05-.59-1.41zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>
+                            <span>Status</span>
+                            <strong>${currentProperty.status === 'sale' ? 'For Sale' : 'For Rent'}</strong>
+                        </div>
+                        <div class="prop-meta__item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M3 9h18M9 21V9"></path></svg>
+                            <span>Area</span>
+                            <strong>${currentProperty.area} Sq Ft</strong>
+                        </div>
+                        <div class="prop-meta__item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>
+                            <span>Bedrooms</span>
+                            <strong>${currentProperty.beds}</strong>
+                        </div>
+                        <div class="prop-meta__item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M20 14V11c0-1.1-.9-2-2-2h-4V6h2V4h-4v5h-2c-1.1 0-2 .9-2 2v3c-1.1 0-2 .9-2 2v3h2v2h2v-2h8v2h2v-2h2v-3c0-1.1-.9-2-2-2z"/></svg>
+                            <span>Bathrooms</span>
+                            <strong>${currentProperty.baths}</strong>
+                        </div>
+                        <div class="prop-meta__item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M12 3L4 9v2l8-6 8 6V9l-8-6z"/><path d="M16 12H8v6h8v-6zm-2 3h-4v-1h4v1z"/></svg>
+                            <span>Garages</span>
+                            <strong>${currentProperty.garages}</strong>
+                        </div>
+                    </div>
+
+                    <div class="prop-section">
+                        <h3 class="prop-section__title">Description</h3>
+                        <p class="prop-description">Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies commodo arcu nec pretium. Nullam sed arcu ultricies. Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies. Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies.</p>
+                    </div>
+
+                    <div class="prop-section">
+                        <h3 class="prop-section__title">Additional Details</h3>
+                        <div class="prop-details-table">
+                            <div class="detail-row">
+                                <div class="detail-label">WATERFRONT</div>
+                                <div class="detail-value">Yes</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">BUILT IN</div>
+                                <div class="detail-value">2003</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">PARKING</div>
+                                <div class="detail-value">2 Or More Spaces, Covered Parking, Valet Parking</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">WATERFRONT</div>
+                                <div class="detail-value">Yes</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">VIEW</div>
+                                <div class="detail-value">Intracoastal View, Direct Ocean</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">WATERFRONT DESCRIPTION</div>
+                                <div class="detail-value">Intracoastal Front, Ocean Access</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prop-section">
+                        <h3 class="prop-section__title">Features</h3>
+                        <div class="prop-features">
+                            SWIMMING POOL <span class="slash">/</span> 3 STORIES <span class="slash">/</span> CENTRAL COOLING <span class="slash">/</span> JOG PATH 2 <span class="slash">/</span> 2 LAWN <span class="slash">/</span> BIKE PATH <span class="slash">/</span>
+                        </div>
+                    </div>
+
+                    <div class="prop-section">
+                        <h3 class="prop-section__title">Property Video</h3>
+                        <div class="prop-video">
+                            <img src="assets/img/content/villa-3.webp" alt="Video Cover">
+                            <button class="play-btn">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            } else {
+                singlePropertyContainer.innerHTML = `<p class="no-results" style="padding: 100px 0;">Property not found. <a href="properties.html" style="color:var(--color-primary);">Go back to catalog</a></p>`;
+            }
+        }
+    }
+
+    const dualSliders = document.querySelectorAll('.dual-slider');
+    
+    function initSliders() {
+        dualSliders.forEach(slider => {
+            const minInput = slider.querySelector('.min-val');
+            const maxInput = slider.querySelector('.max-val');
+            const track = slider.querySelector('.slider-track');
+            const labels = slider.nextElementSibling;
+            
+            if (!minInput || !maxInput || !track || !labels) return;
+
+            const minLabel = labels.querySelector('.min-label');
+            const maxLabel = labels.querySelector('.max-label');
+            
+            const minVal = parseInt(slider.getAttribute('data-min'));
+            const maxVal = parseInt(slider.getAttribute('data-max'));
+            
+            const updateSlider = () => {
+                let min = parseInt(minInput.value);
+                let max = parseInt(maxInput.value);
+                
+                if (min > max) {
+                    let temp = min;
+                    min = max;
+                    max = temp;
+                    minInput.value = min;
+                    maxInput.value = max;
+                }
+                
+                const percentMin = ((min - minVal) / (maxVal - minVal)) * 100;
+                const percentMax = ((max - minVal) / (maxVal - minVal)) * 100;
+                
+                track.style.left = percentMin + '%';
+                track.style.width = (percentMax - percentMin) + '%';
+                
+                const suffix = slider.parentElement.querySelector('label').innerText.includes('$') ? '$' : 
+                            (slider.parentElement.querySelector('label').innerText.includes('m2') ? 'm' : '');
+                
+                if (minLabel) minLabel.innerText = min + suffix;
+                if (maxLabel) maxLabel.innerText = max + suffix;
+            };
+            
+            minInput.addEventListener('input', updateSlider);
+            maxInput.addEventListener('input', updateSlider);
+            
+            updateSlider();
+        });
+    }
+
+    initSliders();
+});
