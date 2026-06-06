@@ -18,6 +18,22 @@ const propertiesData = [
 
 document.addEventListener("DOMContentLoaded", () => {
     
+    // НОВЕ: Автоматичне визначення активного пункту меню
+    const navLinks = document.querySelectorAll('.nav-link');
+    let currentPath = window.location.pathname.split('/').pop();
+    
+    if (currentPath === '') {
+        currentPath = 'index.html'; // Якщо шлях порожній, вважаємо, що це головна сторінка
+    }
+
+    navLinks.forEach(link => {
+        link.classList.remove('active'); // Забираємо клас у всіх на випадок, якщо він прописаний в HTML
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active'); // Додаємо тільки потрібному
+        }
+    });
+
+    // Burger Menu
     const burgerToggle = document.getElementById("burgerToggle");
     const mainNav = document.getElementById("mainNav");
 
@@ -28,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Modal Window (Login)
     const openModalBtn = document.getElementById("openModalBtn");
     const modalOverlay = document.getElementById("modalOverlay");
     const closeModalBtn = document.getElementById("closeModalBtn");
@@ -48,6 +65,44 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Логіка для форми контактів та модального вікна успіху
+    const contactForm = document.getElementById("contactForm");
+    const successModalOverlay = document.getElementById("successModalOverlay");
+    const closeSuccessModalBtn = document.getElementById("closeSuccessModalBtn");
+    const successOkBtn = document.getElementById("successOkBtn");
+
+    if (contactForm && successModalOverlay) {
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault(); 
+            successModalOverlay.classList.add("open");
+            contactForm.reset();
+        });
+
+        const closeSuccessModal = () => {
+            successModalOverlay.classList.remove("open");
+        };
+
+        if (closeSuccessModalBtn) closeSuccessModalBtn.addEventListener("click", closeSuccessModal);
+        if (successOkBtn) successOkBtn.addEventListener("click", closeSuccessModal);
+        
+        successModalOverlay.addEventListener("click", (event) => {
+            if (event.target === successModalOverlay) {
+                closeSuccessModal();
+            }
+        });
+    }
+
+    // Advanced Search Toggle
+    const btnAdvancedToggle = document.getElementById("btnAdvancedToggle");
+    const advancedSearchPanel = document.getElementById("advancedSearchPanel");
+    
+    if (btnAdvancedToggle && advancedSearchPanel) {
+        btnAdvancedToggle.addEventListener("click", () => {
+            advancedSearchPanel.classList.toggle("open");
+        });
+    }
+
+    // Swiper Slider
     if (typeof Swiper !== 'undefined') {
         const swiperElement = document.querySelector('.reviews-slider');
         if (swiperElement) {
@@ -61,26 +116,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     clickable: true,
                 },
                 breakpoints: {
-                    320: {
-                        slidesPerView: 1,
-                        slidesPerGroup: 1,
-                        spaceBetween: 20
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        slidesPerGroup: 2,
-                        spaceBetween: 30
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                        slidesPerGroup: 3,
-                        spaceBetween: 30
-                    }
+                    320: { slidesPerView: 1, slidesPerGroup: 1, spaceBetween: 20 },
+                    768: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 30 },
+                    1024: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 30 }
                 }
             });
         }
     }
 
+    // Counters
     const counters = document.querySelectorAll('.counter-number');
     const speed = 200;
 
@@ -116,6 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Properties Catalog Logic
     const propertiesCatalog = document.getElementById("propertiesCatalog");
     const filterForm = document.getElementById("filterForm");
     const paginationContainer = document.getElementById("paginationContainer");
@@ -237,26 +282,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (filterForm) {
         filterForm.addEventListener("submit", (e) => {
-            e.preventDefault();
+            if (e.target.id !== "heroSearchForm") {
+                e.preventDefault();
+            }
             
-            const keyword = document.getElementById("searchKeyword").value.toLowerCase();
-            const city = document.getElementById("searchCity").value.toLowerCase();
-            const status = document.getElementById("searchStatus").value.toLowerCase();
+            const keyword = document.getElementById("searchKeyword") ? document.getElementById("searchKeyword").value.toLowerCase() : "";
+            const city = document.getElementById("searchCity") ? document.getElementById("searchCity").value.toLowerCase() : "";
+            const status = document.getElementById("searchStatus") ? document.getElementById("searchStatus").value.toLowerCase() : "";
             
             const minPriceInput = document.getElementById("minPrice");
             const maxPriceInput = document.getElementById("maxPrice");
-            const minPrice = parseFloat(minPriceInput.value) || 0;
-            let maxPrice = parseFloat(maxPriceInput.value) || Infinity;
-            if (maxPrice >= parseFloat(maxPriceInput.max)) maxPrice = Infinity;
+            const minPrice = minPriceInput ? parseFloat(minPriceInput.value) || 0 : 0;
+            let maxPrice = maxPriceInput ? parseFloat(maxPriceInput.value) || Infinity : Infinity;
+            if (maxPriceInput && maxPrice >= parseFloat(maxPriceInput.max)) maxPrice = Infinity;
             
             const minAreaInput = document.getElementById("minArea");
             const maxAreaInput = document.getElementById("maxArea");
-            const minArea = parseFloat(minAreaInput.value) || 0;
-            let maxArea = parseFloat(maxAreaInput.value) || Infinity;
-            if (maxArea >= parseFloat(maxAreaInput.max)) maxArea = Infinity;
+            const minArea = minAreaInput ? parseFloat(minAreaInput.value) || 0 : 0;
+            let maxArea = maxAreaInput ? parseFloat(maxAreaInput.value) || Infinity : Infinity;
+            if (maxAreaInput && maxArea >= parseFloat(maxAreaInput.max)) maxArea = Infinity;
             
-            const minBaths = parseFloat(document.getElementById("minBaths").value) || 0;
-            const minBeds = parseFloat(document.getElementById("minBeds").value) || 0;
+            const minBaths = document.getElementById("minBaths") ? parseFloat(document.getElementById("minBaths").value) || 0 : 0;
+            const minBeds = document.getElementById("minBeds") ? parseFloat(document.getElementById("minBeds").value) || 0 : 0;
 
             currentProperties = propertiesData.filter(item => {
                 const matchesKeyword = item.title.toLowerCase().includes(keyword);
@@ -341,6 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Dynamic Single Property Content
     const singlePropertyContainer = document.getElementById("singlePropertyDetails");
     
     if (singlePropertyContainer && typeof propertiesData !== 'undefined') {
@@ -353,22 +401,29 @@ document.addEventListener("DOMContentLoaded", () => {
             if (currentProperty) {
                 document.querySelector('.page-banner__title').innerText = currentProperty.title;
                 
+                const galleryImages = [
+                    currentProperty.image,
+                    "assets/img/content/villa-2.webp",
+                    "assets/img/content/villa-3.webp",
+                    "assets/img/content/villa-1.webp"
+                ];
+                
                 singlePropertyContainer.innerHTML = `
                     <div class="prop-gallery">
                         <div class="prop-gallery__main">
-                            <img src="${currentProperty.image}" alt="${currentProperty.title}">
+                            <img id="mainGalleryImage" src="${galleryImages[0]}" alt="${currentProperty.title}">
                             <div class="prop-gallery__actions">
-                                <button><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></button>
+                                <button id="favoriteBtn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></button>
                                 <button><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
                             </div>
-                            <button class="prop-gallery__arrow prev"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-                            <button class="prop-gallery__arrow next"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                            <button id="galleryPrevBtn" class="prop-gallery__arrow prev"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+                            <button id="galleryNextBtn" class="prop-gallery__arrow next"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
                         </div>
-                        <div class="prop-gallery__thumbs">
-                            <img src="${currentProperty.image}" class="active" alt="Thumb">
-                            <img src="assets/img/content/villa-2.webp" alt="Thumb">
-                            <img src="assets/img/content/villa-3.webp" alt="Thumb">
-                            <img src="${currentProperty.image}" alt="Thumb">
+                        <div class="prop-gallery__thumbs" id="galleryThumbsContainer">
+                            <img src="${galleryImages[0]}" class="active" alt="Thumb">
+                            <img src="${galleryImages[1]}" alt="Thumb">
+                            <img src="${galleryImages[2]}" alt="Thumb">
+                            <img src="${galleryImages[3]}" alt="Thumb">
                         </div>
                     </div>
 
@@ -449,7 +504,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     <div class="prop-section">
                         <h3 class="prop-section__title">Property Video</h3>
-                        <div class="prop-video">
+                        <div class="prop-video" id="propVideoContainer">
+                            <video src="assets/video/property.mp4" controls style="display:none; width: 100%; height: 400px; object-fit: cover; outline: none;"></video>
                             <img src="assets/img/content/villa-3.webp" alt="Video Cover">
                             <button class="play-btn">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
@@ -457,11 +513,105 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                     </div>
                 `;
+
+                // ЛОГІКА ДЛЯ КНОПКИ ЗІРОЧКИ
+                const favoriteBtn = document.getElementById("favoriteBtn") || document.querySelector('.prop-gallery__actions button:first-child');
+                if (favoriteBtn && !favoriteBtn.dataset.favInit) {
+                    favoriteBtn.dataset.favInit = "true";
+                    favoriteBtn.addEventListener("click", () => {
+                        favoriteBtn.classList.toggle("active");
+                    });
+                }
+
             } else {
                 singlePropertyContainer.innerHTML = `<p class="no-results" style="padding: 100px 0;">Property not found. <a href="properties.html" style="color:var(--color-primary);">Go back to catalog</a></p>`;
             }
         }
     }
+
+    function initGallery() {
+        const galleries = document.querySelectorAll('.prop-gallery');
+        galleries.forEach(gallery => {
+            const mainImg = gallery.querySelector('.prop-gallery__main img');
+            const prevBtn = gallery.querySelector('.prop-gallery__arrow.prev');
+            const nextBtn = gallery.querySelector('.prop-gallery__arrow.next');
+            const thumbs = Array.from(gallery.querySelectorAll('.prop-gallery__thumbs img'));
+            
+            if (!mainImg || thumbs.length === 0) return;
+
+            let currentIndex = thumbs.findIndex(t => t.classList.contains('active'));
+            if (currentIndex === -1) currentIndex = 0;
+
+            const updateGallery = (index) => {
+                mainImg.src = thumbs[index].src;
+                thumbs.forEach(t => t.classList.remove('active'));
+                thumbs[index].classList.add('active');
+            };
+
+            if (prevBtn) {
+                if (!prevBtn.dataset.init) {
+                    prevBtn.dataset.init = "true";
+                    prevBtn.addEventListener('click', () => {
+                        currentIndex = (currentIndex === 0) ? thumbs.length - 1 : currentIndex - 1;
+                        updateGallery(currentIndex);
+                    });
+                }
+            }
+
+            if (nextBtn) {
+                if (!nextBtn.dataset.init) {
+                    nextBtn.dataset.init = "true";
+                    nextBtn.addEventListener('click', () => {
+                        currentIndex = (currentIndex === thumbs.length - 1) ? 0 : currentIndex + 1;
+                        updateGallery(currentIndex);
+                    });
+                }
+            }
+
+            thumbs.forEach((thumb, index) => {
+                if (!thumb.dataset.init) {
+                    thumb.dataset.init = "true";
+                    thumb.addEventListener('click', () => {
+                        currentIndex = index;
+                        updateGallery(currentIndex);
+                    });
+                }
+            });
+        });
+    }
+
+    function initVideo() {
+        const videoContainers = document.querySelectorAll('.prop-video');
+        videoContainers.forEach(container => {
+            const video = container.querySelector('video');
+            const cover = container.querySelector('img');
+            const playBtn = container.querySelector('.play-btn');
+            
+            if (video && cover && playBtn && !playBtn.dataset.videoInit) {
+                playBtn.dataset.videoInit = "true";
+                playBtn.addEventListener('click', () => {
+                    cover.style.display = 'none';
+                    playBtn.style.display = 'none';
+                    video.style.display = 'block';
+                    video.play();
+                });
+            }
+        });
+    }
+    
+    function initFavoriteBtn() {
+        const favoriteBtn = document.getElementById("favoriteBtn") || document.querySelector('.prop-gallery__actions button:first-child');
+        if (favoriteBtn && !favoriteBtn.dataset.favInit) {
+            favoriteBtn.dataset.favInit = "true";
+            favoriteBtn.addEventListener("click", () => {
+                favoriteBtn.classList.toggle("active");
+            });
+        }
+    }
+
+    initGallery();
+    initVideo(); 
+    initFavoriteBtn(); 
 
     const dualSliders = document.querySelectorAll('.dual-slider');
     
@@ -499,7 +649,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 track.style.width = (percentMax - percentMin) + '%';
                 
                 const suffix = slider.parentElement.querySelector('label').innerText.includes('$') ? '$' : 
-                            (slider.parentElement.querySelector('label').innerText.includes('m2') ? 'm' : '');
+                               (slider.parentElement.querySelector('label').innerText.includes('m2') ? 'm' : '');
                 
                 if (minLabel) minLabel.innerText = min + suffix;
                 if (maxLabel) maxLabel.innerText = max + suffix;

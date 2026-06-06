@@ -19,11 +19,11 @@
                 <div class="top-bar__contacts">
                     <a href="tel:+1234567890">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                        +1 234 567 7890
+                        +380 50 123 4567
                     </a>
-                    <a href="mailto:your@company.com">
+                    <a href="mailto:info@garoestate.com">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        your@company.com
+                        info@garoestate.com
                     </a>
                 </div>
                 <div class="top-bar__socials">
@@ -55,33 +55,33 @@
                     <img src="assets/img/logo.png" alt="Garo Estate">
                 </a>
 
-                <button class="burger-menu" id="burgerToggle" aria-label="Menu">
+                <button class="burger-menu" id="burgerToggle" aria-label="Меню">
                     <span class="burger-menu__line"></span>
                 </button>
 
                 <nav class="main-nav" id="mainNav">
                     <ul class="nav-list">
                         <li class="nav-item">
-                            <a href="index.html" class="nav-link active">Home <span class="arrow-down"></span></a>
+                            <a href="index.html" class="nav-link">Головна</a> 
                         </li>
                         <li class="nav-item">
-                            <a href="properties.html" class="nav-link">Properties</a>
+                            <a href="properties.html" class="nav-link">Каталог</a>
                         </li>
                         <li class="nav-item">
-                            <a href="property-single.html" class="nav-link">Property</a>
+                            <a href="property-single.html" class="nav-link">Нерухомість</a>
                         </li>
                         <li class="nav-item">
-                            <a href="services.html" class="nav-link">Template <span class="arrow-down"></span></a>
+                            <a href="services.html" class="nav-link">Послуги</a> 
                         </li>
                         <li class="nav-item">
-                            <a href="contact.html" class="nav-link">Contact</a>
+                            <a href="contact.html" class="nav-link">Контакти</a>
                         </li>
                     </ul>
                 </nav>
 
                 <div class="header-actions">
-                    <button class="btn btn--login" id="openModalBtn">Login</button>
-                    <a href="#" class="btn btn--submit">Submit</a>
+                    <button class="btn btn--login" id="openModalBtn">Увійти</button>
+                    <a href="contact.html" class="btn btn--submit">Надіслати повідомлення</a>
                 </div>
             </div>
         </div>
@@ -90,37 +90,102 @@
     <main>
         <section class="hero-section">
             <div class="container">
-                <h1 class="hero-title">PROPERTY SEARCHING JUST GOT SO EASY</h1>
-                <p class="hero-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi deserunt deleniti, ullam commodi sit ipsam laborum obcaecati adipisci quibusdam aliquam tenetur!</p>
+                <h1 class="hero-title">ПОШУК НЕРУХОМОСТІ ЩЕ НІКОЛИ НЕ БУВ ТАКИМ ЛЕГКИМ</h1>
+                <p class="hero-subtitle">Ми пропонуємо найкращі варіанти для купівлі та оренди. Знайдіть будинок вашої мрії швидко, надійно та без зайвих клопотів разом з Garo Estate!</p>
                 
-                <form class="hero-search-form">
-                    <button type="button" class="btn-search-icon" aria-label="Menu">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                    </button>
-                    
-                    <div class="input-group">
-                        <input type="text" placeholder="Key word" aria-label="Keyword">
-                    </div>
-                    
-                    <div class="input-group">
-                        <select aria-label="City">
-                            <option value="">Select your city</option>
-                            <option value="Miami">Miami</option>
-                            <option value="Coral Gables">Coral Gables</option>
-                        </select>
+                <form class="hero-search-form" id="heroSearchForm" action="properties.html">
+                    <div class="search-main-row">
+                        <button type="button" class="btn-advanced-toggle" id="btnAdvancedToggle" aria-label="Розширений пошук">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                        </button>
+                        
+                        <div class="input-group">
+                            <input type="text" id="searchKeyword" placeholder="Ключове слово" aria-label="Ключове слово">
+                        </div>
+                        
+                        <div class="input-group">
+                            <select id="searchCity" aria-label="Місто">
+                                <option value="">Оберіть ваше місто</option>
+                                <option value="Miami">Маямі</option>
+                                <option value="Coral Gables">Корал Гейблз</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <select id="searchStatus" aria-label="Статус">
+                                <option value="">-Статус-</option>
+                                <option value="sale">На продаж</option>
+                                <option value="rent">В оренду</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn-search-icon" aria-label="Шукати">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
                     </div>
 
-                    <div class="input-group">
-                        <select aria-label="Status">
-                            <option value="">-Status-</option>
-                            <option value="sale">For Sale</option>
-                            <option value="rent">For Rent</option>
-                        </select>
+                    <div class="advanced-search-panel" id="advancedSearchPanel">
+                        <div class="sidebar-ranges">
+                            <div class="range-widget">
+                                <label>Діапазон цін ($):</label>
+                                <div class="dual-slider" data-min="2000" data-max="1000000" data-step="1000">
+                                    <div class="slider-track"></div>
+                                    <input type="range" class="min-val" value="2000" min="2000" max="1000000" step="1000">
+                                    <input type="range" class="max-val" value="1000000" min="2000" max="1000000" step="1000">
+                                </div>
+                                <div class="range-labels">
+                                    <span class="min-label">2000$</span>
+                                    <span class="max-label">1000000$</span>
+                                </div>
+                            </div>
+
+                            <div class="range-widget">
+                                <label>Площа (м2) :</label>
+                                <div class="dual-slider" data-min="40" data-max="12000" data-step="10">
+                                    <div class="slider-track"></div>
+                                    <input type="range" class="min-val" value="40" min="40" max="12000" step="10">
+                                    <input type="range" class="max-val" value="12000" min="40" max="12000" step="10">
+                                </div>
+                                <div class="range-labels">
+                                    <span class="min-label">40</span>
+                                    <span class="max-label">12000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="checkbox-grid">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                                Камін
+                            </label>
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Подвійна раковина
+                            </label>
+                            <label class="custom-checkbox">
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                                Басейн
+                            </label>
+                            <label class="custom-checkbox">
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                                2 Поверхи
+                            </label>
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Пральня
+                            </label>
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Запасний вихід
+                            </label>
+                        </div>
                     </div>
-                    
-                    <button type="submit" class="btn-search-icon" aria-label="Search">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    </button>
                 </form>
             </div>
         </section>
@@ -128,20 +193,20 @@
         <section class="properties-section">
             <div class="container">
                 <div class="section-header-centered">
-                    <h2 class="section-title">Top Submitted Property</h2>
-                    <p class="section-subtitle">Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies .</p>
+                    <h2 class="section-title">Найпопулярніші пропозиції</h2>
+                    <p class="section-subtitle">Перегляньте наші найкращі об'єкти нерухомості, які користуються найбільшим попитом серед клієнтів.</p>
                 </div>
                 
                 <div class="properties-grid">
                     <article class="property-card">
                         <div class="property-card__img">
-                            <img src="assets/img/content/villa-1.webp" alt="Villa">
+                            <img src="assets/img/content/villa-1.webp" alt="Вілла">
                         </div>
                         <div class="property-card__content">
-                            <h3>Super Nice Villa</h3>
+                            <h3>Сучасна Вілла</h3>
                             <div class="card-divider"></div>
                             <div class="property-card__meta">
-                                <span class="area"><strong>Area : </strong>120m</span>
+                                <span class="area"><strong>Площа : </strong>120м</span>
                                 <span class="price">$ 300,000</span>
                             </div>
                         </div>
@@ -149,13 +214,13 @@
 
                     <article class="property-card">
                         <div class="property-card__img">
-                            <img src="assets/img/content/villa-2.webp" alt="Villa">
+                            <img src="assets/img/content/villa-2.webp" alt="Вілла">
                         </div>
                         <div class="property-card__content">
-                            <h3>Super Nice Villa</h3>
+                            <h3>Супер Класна Вілла</h3>
                             <div class="card-divider"></div>
                             <div class="property-card__meta">
-                                <span class="area"><strong>Area : </strong>120m</span>
+                                <span class="area"><strong>Площа : </strong>120м</span>
                                 <span class="price">$ 300,000</span>
                             </div>
                         </div>
@@ -163,13 +228,13 @@
 
                     <article class="property-card">
                         <div class="property-card__img">
-                            <img src="assets/img/content/villa-3.webp" alt="Villa">
+                            <img src="assets/img/content/villa-3.webp" alt="Вілла">
                         </div>
                         <div class="property-card__content">
-                            <h3>Super Nice Villa</h3>
+                            <h3>Розкішна Вілла</h3>
                             <div class="card-divider"></div>
                             <div class="property-card__meta">
-                                <span class="area"><strong>Area : </strong>120m</span>
+                                <span class="area"><strong>Площа : </strong>120м</span>
                                 <span class="price">$ 300,000</span>
                             </div>
                         </div>
@@ -177,13 +242,13 @@
 
                     <article class="property-card">
                         <div class="property-card__img">
-                            <img src="assets/img/content/villa-1.webp" alt="Villa">
+                            <img src="assets/img/content/villa-1.webp" alt="Вілла">
                         </div>
                         <div class="property-card__content">
-                            <h3>Super Nice Villa</h3>
+                            <h3>Ексклюзивна Вілла</h3>
                             <div class="card-divider"></div>
                             <div class="property-card__meta">
-                                <span class="area"><strong>Area : </strong>120m</span>
+                                <span class="area"><strong>Площа : </strong>120м</span>
                                 <span class="price">$ 300,000</span>
                             </div>
                         </div>
@@ -191,13 +256,13 @@
 
                     <article class="property-card">
                         <div class="property-card__img">
-                            <img src="assets/img/content/villa-2.webp" alt="Villa">
+                            <img src="assets/img/content/villa-2.webp" alt="Вілла">
                         </div>
                         <div class="property-card__content">
-                            <h3>Super Nice Villa</h3>
+                            <h3>Супер Класна Вілла</h3>
                             <div class="card-divider"></div>
                             <div class="property-card__meta">
-                                <span class="area"><strong>Area : </strong>120m</span>
+                                <span class="area"><strong>Площа : </strong>120м</span>
                                 <span class="price">$ 300,000</span>
                             </div>
                         </div>
@@ -205,27 +270,13 @@
 
                     <article class="property-card">
                         <div class="property-card__img">
-                            <img src="assets/img/content/villa-3.webp" alt="Villa">
+                            <img src="assets/img/content/villa-3.webp" alt="Вілла">
                         </div>
                         <div class="property-card__content">
-                            <h3>Super Nice Villa</h3>
+                            <h3>Класична Вілла</h3>
                             <div class="card-divider"></div>
                             <div class="property-card__meta">
-                                <span class="area"><strong>Area : </strong>120m</span>
-                                <span class="price">$ 300,000</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="property-card">
-                        <div class="property-card__img">
-                            <img src="assets/img/content/villa-1.webp" alt="Villa">
-                        </div>
-                        <div class="property-card__content">
-                            <h3>Super Nice Villa</h3>
-                            <div class="card-divider"></div>
-                            <div class="property-card__meta">
-                                <span class="area"><strong>Area : </strong>120m</span>
+                                <span class="area"><strong>Площа : </strong>120м</span>
                                 <span class="price">$ 300,000</span>
                             </div>
                         </div>
@@ -244,9 +295,9 @@
                                 <rect x="9" y="16" width="5" height="5" />
                                 <rect x="16" y="16" width="5" height="5" />
                             </svg>
-                            <h3>Can't Decide ?</h3>
-                            <p>Show all properties</p>
-                            <a href="properties.html" class="btn btn--outline">All properties</a>
+                            <h3>Не можете обрати?</h3>
+                            <p>Показати всі об'єкти</p>
+                            <a href="properties.html" class="btn btn--outline">Всі пропозиції</a>
                         </div>
                     </article>
                 </div>
@@ -255,57 +306,50 @@
 
         <section class="features-section" style="padding: 50px 0;">
             <div style="width: 100%; max-width: 1920px; margin: 0 auto;">
-                <img src="assets/img/content/features-building.webp" alt="Garo Estate Features" style="width: 100%; display: block; object-fit: cover;">
+                <img src="assets/img/content/features-building.webp" alt="Особливості Garo Estate" style="width: 100%; display: block; object-fit: cover;">
             </div>
         </section>
 
         <section class="reviews-section">
             <div class="container">
-                <h2 class="section-title">Our Customers Said</h2>
+                <h2 class="section-title">Відгуки наших клієнтів</h2>
                 
                 <div class="swiper reviews-slider">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="review-card">
-                                <p class="review-text">Nulla quis dapibus nisl. Suspendisse llam sed arcu ultried arcu ultricies !</p>
-                                <p class="review-author"><strong>Ohidul Islam,</strong> <em>Web Designer</em></p>
+                                <p class="review-text">Чудовий сервіс! Дуже швидко допомогли знайти ідеальний будинок для нашої сім'ї. Рекомендую всім!</p>
+                                <p class="review-author"><strong>Олег Іванов,</strong> <em>Дизайнер</em></p>
                             </div>
-                            <img src="assets/img/content/user-1.webp" alt="Ohidul Islam" class="review-avatar">
+                            <img src="assets/img/content/user-1.webp" alt="Клієнт" class="review-avatar">
                         </div>
                         <div class="swiper-slide">
                             <div class="review-card">
-                                <p class="review-text">Nulla quis dapibus nisl. Suspendisse llam sed arcu ultried arcu ultricies !</p>
-                                <p class="review-author"><strong>Ohidul Islam,</strong> <em>Web Designer</em></p>
+                                <p class="review-text">Професійний підхід та увага до деталей. Оренда офісу пройшла без жодних проблем.</p>
+                                <p class="review-author"><strong>Анна Петренко,</strong> <em>Підприємець</em></p>
                             </div>
-                            <img src="assets/img/content/user-1.webp" alt="Ohidul Islam" class="review-avatar">
+                            <img src="assets/img/content/user-2.webp" alt="Клієнт" class="review-avatar">
                         </div>
                         <div class="swiper-slide">
                             <div class="review-card">
-                                <p class="review-text">Nulla quis dapibus nisl. Suspendisse llam sed arcu ultried arcu ultricies !</p>
-                                <p class="review-author"><strong>Ohidul Islam,</strong> <em>Web Designer</em></p>
+                                <p class="review-text">Дякую команді Garo Estate за допомогу у продажі квартири. Все було зроблено на вищому рівні.</p>
+                                <p class="review-author"><strong>Микола Сидоренко,</strong> <em>Інвестор</em></p>
                             </div>
-                            <img src="assets/img/content/user-1.webp" alt="Ohidul Islam" class="review-avatar">
+                            <img src="assets/img/content/user-3.webp" alt="Клієнт" class="review-avatar">
                         </div>
                         <div class="swiper-slide">
                             <div class="review-card">
-                                <p class="review-text">Nulla quis dapibus nisl. Suspendisse llam sed arcu ultried arcu ultricies !</p>
-                                <p class="review-author"><strong>Ohidul Islam,</strong> <em>Web Designer</em></p>
+                                <p class="review-text">Найкраща агенція нерухомості! Великий вибір об'єктів та приємні менеджери.</p>
+                                <p class="review-author"><strong>Марія Коваль,</strong> <em>Клієнт</em></p>
                             </div>
-                            <img src="assets/img/content/user-1.webp" alt="Ohidul Islam" class="review-avatar">
+                            <img src="assets/img/content/user-4.webp" alt="Клієнт" class="review-avatar">
                         </div>
                         <div class="swiper-slide">
                             <div class="review-card">
-                                <p class="review-text">Nulla quis dapibus nisl. Suspendisse llam sed arcu ultried arcu ultricies !</p>
-                                <p class="review-author"><strong>Ohidul Islam,</strong> <em>Web Designer</em></p>
+                                <p class="review-text">Швидко, надійно та прозоро. Залишився дуже задоволений співпрацею.</p>
+                                <p class="review-author"><strong>Андрій Ткачук,</strong> <em>Клієнт</em></p>
                             </div>
-                            <img src="assets/img/content/user-1.webp" alt="Ohidul Islam" class="review-avatar">
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="review-card">
-                                <p class="review-text">Nulla quis dapibus nisl. Suspendisse llam sed arcu ultried arcu ultricies !</p>
-                                <p class="review-author"><strong>Ohidul Islam,</strong> <em>Web Designer</em></p>
-                            </div>
-                            <img src="assets/img/content/user-1.webp" alt="Ohidul Islam" class="review-avatar">
+                            <img src="assets/img/content/user-5.webp" alt="Клієнт" class="review-avatar">
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -315,7 +359,7 @@
 
         <section class="counters-section">
             <div class="container">
-                <h2 class="section-title" style="margin-bottom: 60px;">You Can Trust Us</h2>
+                <h2 class="section-title" style="margin-bottom: 60px;">Ви можете нам довіряти</h2>
                 <div class="counters-grid">
                     
                     <div class="counter-item">
@@ -328,7 +372,7 @@
                             </svg>
                         </div>
                         <span class="counter-number" data-target="490">0</span>
-                        <p class="counter-label"><span class="yellow-pipe">|</span> Happy Customer <span class="yellow-pipe">|</span></p>
+                        <p class="counter-label"><span class="yellow-pipe">|</span> Задоволених клієнтів <span class="yellow-pipe">|</span></p>
                     </div>
 
                     <div class="counter-item">
@@ -339,7 +383,7 @@
                             </svg>
                         </div>
                         <span class="counter-number" data-target="1300">0</span>
-                        <p class="counter-label"><span class="yellow-pipe">|</span> Properties in Stock <span class="yellow-pipe">|</span></p>
+                        <p class="counter-label"><span class="yellow-pipe">|</span> Об'єктів у базі <span class="yellow-pipe">|</span></p>
                     </div>
 
                     <div class="counter-item">
@@ -350,7 +394,7 @@
                             </svg>
                         </div>
                         <span class="counter-number" data-target="146">0</span>
-                        <p class="counter-label"><span class="yellow-pipe">|</span> City Registered <span class="yellow-pipe">|</span></p>
+                        <p class="counter-label"><span class="yellow-pipe">|</span> Міст охоплено <span class="yellow-pipe">|</span></p>
                     </div>
 
                     <div class="counter-item">
@@ -361,7 +405,7 @@
                             </svg>
                         </div>
                         <span class="counter-number" data-target="490">0</span>
-                        <p class="counter-label"><span class="yellow-pipe">|</span> Dealer Branches <span class="yellow-pipe">|</span></p>
+                        <p class="counter-label"><span class="yellow-pipe">|</span> Філій агенції <span class="yellow-pipe">|</span></p>
                     </div>
 
                 </div>
@@ -381,8 +425,8 @@
                                 </svg>
                             </div>
                             <div class="cta-box__text">
-                                <h3>ARE YOU LOOKING FOR A PROPERTY?</h3>
-                                <p>varius od lio eget conseq uat blandit, lorem auglue comm lodo<br>nisl no us nibh mas lsa</p>
+                                <h3>ШУКАЄТЕ НЕРУХОМІСТЬ?</h3>
+                                <p>Перегляньте нашу базу актуальних пропозицій та<br>знайдіть саме те, що вам потрібно</p>
                             </div>
                         </div>
                         <div class="cta-box__arrow">
@@ -403,8 +447,8 @@
                                 </svg>
                             </div>
                             <div class="cta-box__text">
-                                <h3>DO YOU WANT TO SELL A PROPERTY?</h3>
-                                <p>varius od lio eget conseq uat blandit, lorem auglue comm lodo<br>nisl no us nibh mas lsa</p>
+                                <h3>ХОЧЕТЕ ПРОДАТИ АБО ЗДАТИ В ОРЕНДУ?</h3>
+                                <p>Зв'яжіться з нами і наші спеціалісти допоможуть<br>оформити все швидко та вигідно</p>
                             </div>
                         </div>
                         <div class="cta-box__arrow">
@@ -419,7 +463,7 @@
                 </div>
 
                 <div class="cta-call">
-                    QUESTIONS? CALL US : <strong>+ 3-123- 424-5700</strong>
+                    МАЄТЕ ПИТАННЯ? ТЕЛЕФОНУЙТЕ: <strong>+380 50 123 4567</strong>
                 </div>
             </div>
         </section>
@@ -429,73 +473,70 @@
         <div class="container footer-grid">
             
             <div class="footer-col">
-                <h5 class="footer-title">ABOUT US</h5>
+                <h5 class="footer-title">ПРО НАС</h5>
                 <div class="footer-logo">
                     <img src="assets/img/logo.png" alt="Garo Estate">
                 </div>
-                <p class="footer-desc">Lorem ipsum dolor cum necessitatibus su quisquam molestias. Vel unde, blanditiis.</p>
+                <p class="footer-desc">Ми – надійна агенція нерухомості з багаторічним досвідом. Допомагаємо купувати, продавати та орендувати найкращі об'єкти.</p>
                 <ul class="footer-contact">
                     <li>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        9089 your adress her
+                        вул. Хрещатик 12, Київ
                     </li>
                     <li>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        email@yourcompany.com
+                        info@garoestate.com
                     </li>
                     <li>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                        +1 908 967 5906
+                        +380 50 123 4567
                     </li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h5 class="footer-title">QUICK LINKS</h5>
+                <h5 class="footer-title">ШВИДКІ ПОСИЛАННЯ</h5>
                 <ul class="footer-links">
-                    <li><a href="properties.html">PROPERTIES</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="#">SUBMIT PROPERTY</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
-                    <li><a href="#">FQA</a></li>
-                    <li><a href="#">TERMS</a></li>
+                    <li><a href="properties.html">КАТАЛОГ</a></li>
+                    <li><a href="services.html">ПОСЛУГИ</a></li>
+                    <li><a href="contact.html">КОНТАКТИ</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h5 class="footer-title">LAST NEWS</h5>
+                <h5 class="footer-title">ОСТАННІ НОВИНИ</h5>
                 <div class="footer-news">
                     
                     <article class="news-item">
                         <div class="news-item__img">
-                            <img src="assets/img/content/villa-1.webp" alt="News">
-                            <span class="news-date">12-12-2016</span>
+                            <img src="assets/img/content/villa-1.webp" alt="Новина">
+                            <span class="news-date">12-12-2023</span>
                         </div>
                         <div class="news-item__content">
-                            <h6><a href="#">Add News Functions</a></h6>
-                            <p>Lorem ipsum dolor sit amet, nulla ...</p>
+                            <h6><a href="#">Нові функції пошуку</a></h6>
+                            <p>Ми додали нові фільтри для зручності...</p>
                         </div>
                     </article>
 
                     <article class="news-item">
                         <div class="news-item__img">
-                            <img src="assets/img/content/villa-2.webp" alt="News">
-                            <span class="news-date">12-12-2016</span>
+                            <img src="assets/img/content/villa-2.webp" alt="Новина">
+                            <span class="news-date">10-12-2023</span>
                         </div>
                         <div class="news-item__content">
-                            <h6><a href="#">Add News Functions</a></h6>
-                            <p>Lorem ipsum dolor sit amet, nulla ...</p>
+                            <h6><a href="#">Огляд ринку</a></h6>
+                            <p>Аналітика цін на нерухомість у Києві...</p>
                         </div>
                     </article>
 
                     <article class="news-item">
                         <div class="news-item__img">
-                            <img src="assets/img/content/villa-3.webp" alt="News">
-                            <span class="news-date">12-12-2016</span>
+                            <img src="assets/img/content/villa-3.webp" alt="Новина">
+                            <span class="news-date">05-12-2023</span>
                         </div>
                         <div class="news-item__content">
-                            <h6><a href="#">Add News Functions</a></h6>
-                            <p>Lorem ipsum dolor sit amet, nulla ...</p>
+                            <h6><a href="#">Поради інвесторам</a></h6>
+                            <p>У яку нерухомість краще вкладати...</p>
                         </div>
                     </article>
 
@@ -503,12 +544,12 @@
             </div>
 
             <div class="footer-col">
-                <h5 class="footer-title">STAY IN TOUCH</h5>
-                <p class="footer-desc">Lorem ipsum dolor sit amet, nulla suscipit similique quisquam molestias. Vel unde, blanditiis.</p>
+                <h5 class="footer-title">БУДЬТЕ НА ЗВ'ЯЗКУ</h5>
+                <p class="footer-desc">Підпишіться на нашу розсилку, щоб першими отримувати найвигідніші пропозиції та новини ринку нерухомості.</p>
                 
                 <form class="footer-subscribe">
-                    <input type="email" placeholder="E-mail" required>
-                    <button type="submit" aria-label="Subscribe">
+                    <input type="email" placeholder="Ваш E-mail" required>
+                    <button type="submit" aria-label="Підписатися">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                     </button>
                 </form>
@@ -536,14 +577,14 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>(C) KimaroTheme , All rights reserved 2016</p>
+                <p>(C) Garo Estate, Всі права захищено 2024</p>
             </div>
         </div>
     </footer>
 
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-window">
-            <button class="modal-close" id="closeModalBtn" aria-label="Close">&times;</button>
+            <button class="modal-close" id="closeModalBtn" aria-label="Закрити">&times;</button>
             <h3>Авторизація</h3>
             <form class="modal-form">
                 <input type="text" placeholder="Логін чи Email" required>
