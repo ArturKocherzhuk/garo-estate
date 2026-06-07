@@ -1,35 +1,35 @@
 const propertiesData = [
-    { id: 1, title: "SUPER NICE VILLA", price: 300000, area: 120, beds: 5, baths: 2, garages: 1, image: "assets/img/content/villa-1.webp", city: "Miami", status: "sale", date: "2023-01-01" },
-    { id: 2, title: "SUPER NICE VILLA", price: 350000, area: 150, beds: 4, baths: 3, garages: 2, image: "assets/img/content/villa-2.webp", city: "Coral Gables", status: "sale", date: "2023-02-15" },
-    { id: 3, title: "SUPER NICE VILLA", price: 280000, area: 110, beds: 3, baths: 2, garages: 1, image: "assets/img/content/villa-3.webp", city: "Miami", status: "sale", date: "2023-03-10" },
-    { id: 4, title: "SUPER NICE VILLA", price: 420000, area: 200, beds: 6, baths: 4, garages: 2, image: "assets/img/content/villa-1.webp", city: "Coral Gables", status: "sale", date: "2023-01-20" },
-    { id: 5, title: "SUPER NICE VILLA", price: 310000, area: 130, beds: 4, baths: 2, garages: 1, image: "assets/img/content/villa-2.webp", city: "Miami", status: "sale", date: "2023-04-05" },
-    { id: 6, title: "SUPER NICE VILLA", price: 290000, area: 115, beds: 3, baths: 2, garages: 1, image: "assets/img/content/villa-3.webp", city: "Coral Gables", status: "sale", date: "2023-05-12" },
-    { id: 7, title: "SUPER NICE VILLA", price: 500000, area: 250, beds: 5, baths: 4, garages: 3, image: "assets/img/content/villa-1.webp", city: "Miami", status: "sale", date: "2023-06-01" },
-    { id: 8, title: "SUPER NICE VILLA", price: 330000, area: 140, beds: 4, baths: 2, garages: 1, image: "assets/img/content/villa-2.webp", city: "Coral Gables", status: "sale", date: "2023-02-28" },
-    { id: 9, title: "SUPER NICE VILLA", price: 275000, area: 105, beds: 3, baths: 1, garages: 1, image: "assets/img/content/villa-3.webp", city: "Miami", status: "sale", date: "2023-07-15" },
-    { id: 10, title: "SUPER NICE VILLA", price: 380000, area: 160, beds: 4, baths: 3, garages: 2, image: "assets/img/content/villa-1.webp", city: "Miami", status: "sale", date: "2023-08-05" },
-    { id: 11, title: "SUPER NICE VILLA", price: 250000, area: 90, beds: 2, baths: 1, garages: 1, image: "assets/img/content/villa-2.webp", city: "Coral Gables", status: "sale", date: "2023-09-12" },
-    { id: 12, title: "SUPER NICE VILLA", price: 600000, area: 300, beds: 6, baths: 5, garages: 3, image: "assets/img/content/villa-3.webp", city: "Miami", status: "sale", date: "2023-10-20" },
-    { id: 13, title: "SUPER NICE VILLA", price: 320000, area: 135, beds: 4, baths: 2, garages: 2, image: "assets/img/content/villa-1.webp", city: "Coral Gables", status: "sale", date: "2023-11-01" },
-    { id: 14, title: "SUPER NICE VILLA", price: 450000, area: 210, beds: 5, baths: 4, garages: 2, image: "assets/img/content/villa-2.webp", city: "Miami", status: "sale", date: "2023-12-15" },
-    { id: 15, title: "SUPER NICE VILLA", price: 295000, area: 118, beds: 3, baths: 2, garages: 1, image: "assets/img/content/villa-3.webp", city: "Coral Gables", status: "sale", date: "2024-01-10" }
+    { id: 1, title: "СУЧАСНА ВІЛЛА", price: 300000, area: 120, beds: 5, baths: 2, garages: 1, image: "assets/img/content/villa-1.webp", city: "miami", status: "sale", date: "2026-01-01" },
+    { id: 2, title: "ЕКСКЛЮЗИВНА ВІЛЛА", price: 350000, area: 150, beds: 4, baths: 3, garages: 2, image: "assets/img/content/villa-2.webp", city: "coral gables", status: "sale", date: "2026-02-15" },
+    { id: 3, title: "РОЗКІШНА ВІЛЛА", price: 280000, area: 110, beds: 3, baths: 2, garages: 1, image: "assets/img/content/villa-3.webp", city: "miami", status: "sale", date: "2026-03-10" },
+    { id: 4, title: "СУПЕР ВІЛЛА", price: 420000, area: 200, beds: 6, baths: 4, garages: 2, image: "assets/img/content/villa-1.webp", city: "coral gables", status: "sale", date: "2026-01-20" },
+    { id: 5, title: "КЛАСИЧНА ВІЛЛА", price: 310000, area: 130, beds: 4, baths: 2, garages: 1, image: "assets/img/content/villa-2.webp", city: "miami", status: "rent", date: "2026-04-05" },
+    { id: 6, title: "ЕКО-БУДИНОК", price: 290000, area: 115, beds: 3, baths: 2, garages: 1, image: "assets/img/content/villa-3.webp", city: "coral gables", status: "sale", date: "2026-05-12" },
+    { id: 7, title: "СІМЕЙНА ВІЛЛА", price: 500000, area: 250, beds: 5, baths: 4, garages: 3, image: "assets/img/content/villa-1.webp", city: "miami", status: "sale", date: "2026-06-01" },
+    { id: 8, title: "ЕЛІТНИЙ КОТЕДЖ", price: 330000, area: 140, beds: 4, baths: 2, garages: 1, image: "assets/img/content/villa-2.webp", city: "coral gables", status: "rent", date: "2026-02-28" },
+    { id: 9, title: "ПРИВАТНИЙ БУДИНОК", price: 275000, area: 105, beds: 3, baths: 1, garages: 1, image: "assets/img/content/villa-3.webp", city: "miami", status: "sale", date: "2026-07-15" },
+    { id: 10, title: "ВІЛЛА З БАСЕЙНОМ", price: 380000, area: 160, beds: 4, baths: 3, garages: 2, image: "assets/img/content/villa-1.webp", city: "miami", status: "sale", date: "2026-08-05" },
+    { id: 11, title: "БУДИНОК БІЛЯ МОРЯ", price: 250000, area: 90, beds: 2, baths: 1, garages: 1, image: "assets/img/content/villa-2.webp", city: "coral gables", status: "rent", date: "2026-09-12" },
+    { id: 12, title: "ПРЕМІУМ ВІЛЛА", price: 600000, area: 300, beds: 6, baths: 5, garages: 3, image: "assets/img/content/villa-3.webp", city: "miami", status: "sale", date: "2026-10-20" },
+    { id: 13, title: "ЗАТИШНА ВІЛЛА", price: 320000, area: 135, beds: 4, baths: 2, garages: 2, image: "assets/img/content/villa-1.webp", city: "coral gables", status: "sale", date: "2026-11-01" },
+    { id: 14, title: "ВЕЛИКИЙ КОТЕДЖ", price: 450000, area: 210, beds: 5, baths: 4, garages: 2, image: "assets/img/content/villa-2.webp", city: "miami", status: "rent", date: "2026-12-15" },
+    { id: 15, title: "КОМФОРТНИЙ ДІМ", price: 295000, area: 118, beds: 3, baths: 2, garages: 1, image: "assets/img/content/villa-3.webp", city: "coral gables", status: "sale", date: "2026-01-10" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    // НОВЕ: Автоматичне визначення активного пункту меню
+    // Автоматичне визначення активного пункту меню
     const navLinks = document.querySelectorAll('.nav-link');
     let currentPath = window.location.pathname.split('/').pop();
     
     if (currentPath === '') {
-        currentPath = 'index.html'; // Якщо шлях порожній, вважаємо, що це головна сторінка
+        currentPath = 'index.html'; 
     }
 
     navLinks.forEach(link => {
-        link.classList.remove('active'); // Забираємо клас у всіх на випадок, якщо він прописаний в HTML
+        link.classList.remove('active'); 
         if (link.getAttribute('href') === currentPath) {
-            link.classList.add('active'); // Додаємо тільки потрібному
+            link.classList.add('active'); 
         }
     });
 
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Логіка для форми контактів та модального вікна успіху
+    // Логіка для форми контактів
     const contactForm = document.getElementById("contactForm");
     const successModalOverlay = document.getElementById("successModalOverlay");
     const closeSuccessModalBtn = document.getElementById("closeSuccessModalBtn");
@@ -172,6 +172,70 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentPage = 1;
     let itemsPerPage = 12;
 
+    // ФУНКЦІЯ ФІЛЬТРАЦІЇ (працює і при завантаженні, і при кліку на "Шукати")
+    function applyFilters() {
+        const keyword = document.getElementById("searchKeyword") ? document.getElementById("searchKeyword").value.toLowerCase() : "";
+        const city = document.getElementById("searchCity") ? document.getElementById("searchCity").value.toLowerCase() : "";
+        const status = document.getElementById("searchStatus") ? document.getElementById("searchStatus").value.toLowerCase() : "";
+        
+        const minPriceInput = document.getElementById("minPrice");
+        const maxPriceInput = document.getElementById("maxPrice");
+        const minPrice = minPriceInput ? parseFloat(minPriceInput.value) || 0 : 0;
+        let maxPrice = maxPriceInput ? parseFloat(maxPriceInput.value) || Infinity : Infinity;
+        if (maxPriceInput && maxPrice >= parseFloat(maxPriceInput.max)) maxPrice = Infinity;
+        
+        const minAreaInput = document.getElementById("minArea");
+        const maxAreaInput = document.getElementById("maxArea");
+        const minArea = minAreaInput ? parseFloat(minAreaInput.value) || 0 : 0;
+        let maxArea = maxAreaInput ? parseFloat(maxAreaInput.value) || Infinity : Infinity;
+        if (maxAreaInput && maxArea >= parseFloat(maxAreaInput.max)) maxArea = Infinity;
+        
+        const minBaths = document.getElementById("minBaths") ? parseFloat(document.getElementById("minBaths").value) || 0 : 0;
+        const minBeds = document.getElementById("minBeds") ? parseFloat(document.getElementById("minBeds").value) || 0 : 0;
+
+        currentProperties = propertiesData.filter(item => {
+            const matchesKeyword = item.title.toLowerCase().includes(keyword);
+            const matchesCity = city === "" || item.city.toLowerCase() === city;
+            const matchesStatus = status === "" || item.status.toLowerCase() === status;
+            const matchesPrice = item.price >= minPrice && item.price <= maxPrice;
+            const matchesArea = item.area >= minArea && item.area <= maxArea;
+            const matchesBaths = item.baths >= minBaths;
+            const matchesBeds = item.beds >= minBeds;
+
+            return matchesKeyword && matchesCity && matchesStatus && matchesPrice && matchesArea && matchesBaths && matchesBeds;
+        });
+
+        currentPage = 1;
+        updateCatalog();
+    }
+
+    // Читання параметрів з URL (перенесення вибору з інших сторінок)
+    const urlParams = new URLSearchParams(window.location.search);
+    let hasUrlParams = Array.from(urlParams).length > 0;
+
+    if (hasUrlParams) {
+        if (urlParams.has('keyword') && document.getElementById("searchKeyword")) document.getElementById("searchKeyword").value = urlParams.get('keyword');
+        if (urlParams.has('city') && document.getElementById("searchCity")) document.getElementById("searchCity").value = urlParams.get('city');
+        if (urlParams.has('status') && document.getElementById("searchStatus")) document.getElementById("searchStatus").value = urlParams.get('status');
+        
+        if (urlParams.has('minPrice') && document.getElementById("minPrice")) document.getElementById("minPrice").value = urlParams.get('minPrice');
+        if (urlParams.has('maxPrice') && document.getElementById("maxPrice")) document.getElementById("maxPrice").value = urlParams.get('maxPrice');
+        if (urlParams.has('minArea') && document.getElementById("minArea")) document.getElementById("minArea").value = urlParams.get('minArea');
+        if (urlParams.has('maxArea') && document.getElementById("maxArea")) document.getElementById("maxArea").value = urlParams.get('maxArea');
+        if (urlParams.has('minBaths') && document.getElementById("minBaths")) document.getElementById("minBaths").value = urlParams.get('minBaths');
+        if (urlParams.has('maxBaths') && document.getElementById("maxBaths")) document.getElementById("maxBaths").value = urlParams.get('maxBaths');
+        if (urlParams.has('minBeds') && document.getElementById("minBeds")) document.getElementById("minBeds").value = urlParams.get('minBeds');
+        if (urlParams.has('maxBeds') && document.getElementById("maxBeds")) document.getElementById("maxBeds").value = urlParams.get('maxBeds');
+
+        // Відновлюємо стан чекбоксів
+        if (urlParams.has('features')) {
+            const features = urlParams.getAll('features');
+            document.querySelectorAll('input[name="features"]').forEach(cb => {
+                cb.checked = features.includes(cb.value);
+            });
+        }
+    }
+
     function updateCatalog() {
         if (!propertiesCatalog) return;
 
@@ -188,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
         propertiesCatalog.innerHTML = "";
 
         if (paginatedItems.length === 0) {
-            propertiesCatalog.innerHTML = `<p class="no-results">No properties found.</p>`;
+            propertiesCatalog.innerHTML = `<p class="no-results" style="padding:40px 0;">На жаль, за вашим запитом нічого не знайдено.</p>`;
             if (paginationContainer) paginationContainer.innerHTML = "";
             return;
         }
@@ -205,7 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h3><a href="property-single.html?id=${item.id}">${item.title}</a></h3>
                     <div class="card-divider"></div>
                     <div class="property-card__meta">
-                        <span class="area"><strong>Area : </strong>${item.area}m</span>
+                        <span class="area"><strong>Площа : </strong>${item.area} м²</span>
                         <span class="price">$ ${item.price.toLocaleString()}</span>
                     </div>
                     <div class="property-card__icons">
@@ -237,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (totalPages <= 1) return;
 
         const prevLi = document.createElement("li");
-        prevLi.innerHTML = `<a href="#" class="prev ${currentPage === 1 ? 'disabled' : ''}">Prev</a>`;
+        prevLi.innerHTML = `<a href="#" class="prev ${currentPage === 1 ? 'disabled' : ''}">Попер.</a>`;
         prevLi.addEventListener("click", (e) => {
             e.preventDefault();
             if (currentPage > 1) {
@@ -259,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const nextLi = document.createElement("li");
-        nextLi.innerHTML = `<a href="#" class="next ${currentPage === totalPages ? 'disabled' : ''}">Next</a>`;
+        nextLi.innerHTML = `<a href="#" class="next ${currentPage === totalPages ? 'disabled' : ''}">Наст.</a>`;
         nextLi.addEventListener("click", (e) => {
             e.preventDefault();
             if (currentPage < totalPages) {
@@ -282,48 +346,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (filterForm) {
         filterForm.addEventListener("submit", (e) => {
-            if (e.target.id !== "heroSearchForm") {
+            // Тільки якщо ми на сторінці каталогу, блокуємо перезавантаження і фільтруємо JS-ом
+            if (propertiesCatalog && window.location.pathname.includes('properties.html')) {
                 e.preventDefault();
+            } else {
+                return; // Якщо ми на іншій сторінці (напр. index або property-single), форма спрацює стандартно і перекине на каталог
             }
             
-            const keyword = document.getElementById("searchKeyword") ? document.getElementById("searchKeyword").value.toLowerCase() : "";
-            const city = document.getElementById("searchCity") ? document.getElementById("searchCity").value.toLowerCase() : "";
-            const status = document.getElementById("searchStatus") ? document.getElementById("searchStatus").value.toLowerCase() : "";
-            
-            const minPriceInput = document.getElementById("minPrice");
-            const maxPriceInput = document.getElementById("maxPrice");
-            const minPrice = minPriceInput ? parseFloat(minPriceInput.value) || 0 : 0;
-            let maxPrice = maxPriceInput ? parseFloat(maxPriceInput.value) || Infinity : Infinity;
-            if (maxPriceInput && maxPrice >= parseFloat(maxPriceInput.max)) maxPrice = Infinity;
-            
-            const minAreaInput = document.getElementById("minArea");
-            const maxAreaInput = document.getElementById("maxArea");
-            const minArea = minAreaInput ? parseFloat(minAreaInput.value) || 0 : 0;
-            let maxArea = maxAreaInput ? parseFloat(maxAreaInput.value) || Infinity : Infinity;
-            if (maxAreaInput && maxArea >= parseFloat(maxAreaInput.max)) maxArea = Infinity;
-            
-            const minBaths = document.getElementById("minBaths") ? parseFloat(document.getElementById("minBaths").value) || 0 : 0;
-            const minBeds = document.getElementById("minBeds") ? parseFloat(document.getElementById("minBeds").value) || 0 : 0;
+            applyFilters();
 
-            currentProperties = propertiesData.filter(item => {
-                const matchesKeyword = item.title.toLowerCase().includes(keyword);
-                const matchesCity = city === "" || item.city.toLowerCase() === city;
-                const matchesStatus = status === "" || item.status.toLowerCase() === status;
-                const matchesPrice = item.price >= minPrice && item.price <= maxPrice;
-                const matchesArea = item.area >= minArea && item.area <= maxArea;
-                const matchesBaths = item.baths >= minBaths;
-                const matchesBeds = item.beds >= minBeds;
-
-                return matchesKeyword && matchesCity && matchesStatus && matchesPrice && matchesArea && matchesBaths && matchesBeds;
-            });
-
-            currentPage = 1;
-            updateCatalog();
+            // Очищаємо параметри URL без перезавантаження сторінки (щоб лінк був красивим)
+            const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            window.history.pushState({path:newUrl},'',newUrl);
         });
     }
 
+    // Якщо ми на сторінці каталогу, застосовуємо фільтри з URL або просто рендеримо все
     if (propertiesCatalog) {
-        updateCatalog();
+        if (hasUrlParams) {
+            applyFilters();
+        } else {
+            updateCatalog();
+        }
     }
 
     const sortDateBtn = document.getElementById("sortDateBtn");
@@ -407,6 +451,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/img/content/villa-3.webp",
                     "assets/img/content/villa-1.webp"
                 ];
+
+                const translatedCity = currentProperty.city === 'miami' ? 'МАЯМІ' : 'КОРАЛ ГЕЙБЛЗ';
+                const translatedStatus = currentProperty.status === 'sale' ? 'Продаж' : 'Оренда';
                 
                 singlePropertyContainer.innerHTML = `
                     <div class="prop-gallery">
@@ -428,82 +475,82 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
 
                     <div class="prop-header">
-                        <h2 class="prop-title">${currentProperty.title} IN ${currentProperty.city.toUpperCase()}</h2>
+                        <h2 class="prop-title">${currentProperty.title} У МІСТІ ${translatedCity}</h2>
                         <div class="prop-price">$${currentProperty.price.toLocaleString()}</div>
                     </div>
 
                     <div class="prop-meta">
                         <div class="prop-meta__item">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l9 9c.36.36.86.59 1.41.59s1.05-.23 1.41-.59l7-7c.36-.36.59-.86.59-1.41s-.23-1.05-.59-1.41zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>
-                            <span>Status</span>
-                            <strong>${currentProperty.status === 'sale' ? 'For Sale' : 'For Rent'}</strong>
+                            <span>Статус</span>
+                            <strong>${translatedStatus}</strong>
                         </div>
                         <div class="prop-meta__item">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M3 9h18M9 21V9"></path></svg>
-                            <span>Area</span>
-                            <strong>${currentProperty.area} Sq Ft</strong>
+                            <span>Площа</span>
+                            <strong>${currentProperty.area} м²</strong>
                         </div>
                         <div class="prop-meta__item">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>
-                            <span>Bedrooms</span>
+                            <span>Спальні</span>
                             <strong>${currentProperty.beds}</strong>
                         </div>
                         <div class="prop-meta__item">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M20 14V11c0-1.1-.9-2-2-2h-4V6h2V4h-4v5h-2c-1.1 0-2 .9-2 2v3c-1.1 0-2 .9-2 2v3h2v2h2v-2h8v2h2v-2h2v-3c0-1.1-.9-2-2-2z"/></svg>
-                            <span>Bathrooms</span>
+                            <span>Ванні кімнати</span>
                             <strong>${currentProperty.baths}</strong>
                         </div>
                         <div class="prop-meta__item">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M12 3L4 9v2l8-6 8 6V9l-8-6z"/><path d="M16 12H8v6h8v-6zm-2 3h-4v-1h4v1z"/></svg>
-                            <span>Garages</span>
+                            <span>Гаражі</span>
                             <strong>${currentProperty.garages}</strong>
                         </div>
                     </div>
 
                     <div class="prop-section">
-                        <h3 class="prop-section__title">Description</h3>
-                        <p class="prop-description">Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies commodo arcu nec pretium. Nullam sed arcu ultricies. Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies. Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies.</p>
+                        <h3 class="prop-section__title">Опис</h3>
+                        <p class="prop-description">Це чудовий об'єкт нерухомості з продуманим плануванням та високоякісним ремонтом. Будинок розташований у тихому районі з розвиненою інфраструктурою. Великі вікна забезпечують багато природного світла, а простора ділянка ідеально підійде для сімейного відпочинку на свіжому повітрі.</p>
                     </div>
 
                     <div class="prop-section">
-                        <h3 class="prop-section__title">Additional Details</h3>
+                        <h3 class="prop-section__title">Додаткові деталі</h3>
                         <div class="prop-details-table">
                             <div class="detail-row">
-                                <div class="detail-label">WATERFRONT</div>
-                                <div class="detail-value">Yes</div>
+                                <div class="detail-label">НАБЕРЕЖНА</div>
+                                <div class="detail-value">Так</div>
                             </div>
                             <div class="detail-row">
-                                <div class="detail-label">BUILT IN</div>
-                                <div class="detail-value">2003</div>
+                                <div class="detail-label">РІК ПОБУДОВИ</div>
+                                <div class="detail-value">2021</div>
                             </div>
                             <div class="detail-row">
-                                <div class="detail-label">PARKING</div>
-                                <div class="detail-value">2 Or More Spaces, Covered Parking, Valet Parking</div>
+                                <div class="detail-label">ПАРКОВКА</div>
+                                <div class="detail-value">2 або більше місць, Накрита парковка</div>
                             </div>
                             <div class="detail-row">
-                                <div class="detail-label">WATERFRONT</div>
-                                <div class="detail-value">Yes</div>
+                                <div class="detail-label">ІНТЕРНЕТ</div>
+                                <div class="detail-value">Оптоволокно</div>
                             </div>
                             <div class="detail-row">
-                                <div class="detail-label">VIEW</div>
-                                <div class="detail-value">Intracoastal View, Direct Ocean</div>
+                                <div class="detail-label">ВИД</div>
+                                <div class="detail-value">Прямий вид на океан / парк</div>
                             </div>
                             <div class="detail-row">
-                                <div class="detail-label">WATERFRONT DESCRIPTION</div>
-                                <div class="detail-value">Intracoastal Front, Ocean Access</div>
+                                <div class="detail-label">ЛАНДШАФТ</div>
+                                <div class="detail-value">Газон, декоративні дерева</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="prop-section">
-                        <h3 class="prop-section__title">Features</h3>
+                        <h3 class="prop-section__title">Особливості</h3>
                         <div class="prop-features">
-                            SWIMMING POOL <span class="slash">/</span> 3 STORIES <span class="slash">/</span> CENTRAL COOLING <span class="slash">/</span> JOG PATH 2 <span class="slash">/</span> 2 LAWN <span class="slash">/</span> BIKE PATH <span class="slash">/</span>
+                            БАСЕЙН <span class="slash">/</span> 2 ПОВЕРХИ <span class="slash">/</span> СИСТЕМА КОНДИЦІОНУВАННЯ <span class="slash">/</span> ПРАЛЬНЯ <span class="slash">/</span> ЗОНА БАРБЕКЮ <span class="slash">/</span> СИСТЕМА БЕЗПЕКИ
                         </div>
                     </div>
 
                     <div class="prop-section">
-                        <h3 class="prop-section__title">Property Video</h3>
+                        <h3 class="prop-section__title">Відео об'єкта</h3>
                         <div class="prop-video" id="propVideoContainer">
                             <video src="assets/video/property.mp4" controls style="display:none; width: 100%; height: 400px; object-fit: cover; outline: none;"></video>
                             <img src="assets/img/content/villa-3.webp" alt="Video Cover">
@@ -514,7 +561,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 `;
 
-                // ЛОГІКА ДЛЯ КНОПКИ ЗІРОЧКИ
                 const favoriteBtn = document.getElementById("favoriteBtn") || document.querySelector('.prop-gallery__actions button:first-child');
                 if (favoriteBtn && !favoriteBtn.dataset.favInit) {
                     favoriteBtn.dataset.favInit = "true";
@@ -524,7 +570,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
             } else {
-                singlePropertyContainer.innerHTML = `<p class="no-results" style="padding: 100px 0;">Property not found. <a href="properties.html" style="color:var(--color-primary);">Go back to catalog</a></p>`;
+                singlePropertyContainer.innerHTML = `<p class="no-results" style="padding: 100px 0;">Об'єкт не знайдено. <a href="properties.html" style="color:var(--color-primary);">Повернутися до каталогу</a></p>`;
             }
         }
     }
@@ -648,8 +694,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 track.style.left = percentMin + '%';
                 track.style.width = (percentMax - percentMin) + '%';
                 
-                const suffix = slider.parentElement.querySelector('label').innerText.includes('$') ? '$' : 
-                               (slider.parentElement.querySelector('label').innerText.includes('m2') ? 'm' : '');
+                const suffix = slider.parentElement.querySelector('label').innerText.includes('$') || slider.parentElement.querySelector('label').innerText.includes('цін') ? '$' : 
+                                (slider.parentElement.querySelector('label').innerText.includes('m2') || slider.parentElement.querySelector('label').innerText.includes('Площа') ? 'м' : '');
                 
                 if (minLabel) minLabel.innerText = min + suffix;
                 if (maxLabel) maxLabel.innerText = max + suffix;

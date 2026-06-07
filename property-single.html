@@ -277,16 +277,16 @@
                 <div class="widget">
                     <h3 class="widget-title">Розумний пошук</h3>
                     
-                    <form class="sidebar-form">
-                        <input type="text" placeholder="Ключове слово" class="sidebar-input">
+                    <form class="sidebar-form" action="properties.html" method="GET">
+                        <input type="text" name="keyword" placeholder="Ключове слово" class="sidebar-input">
                         
                         <div class="sidebar-select-group">
-                            <select class="sidebar-select">
+                            <select name="city" class="sidebar-select">
                                 <option value="">Виберіть місто</option>
                                 <option value="miami">Miami</option>
                                 <option value="coral gables">Coral Gables</option>
                             </select>
-                            <select class="sidebar-select">
+                            <select name="status" class="sidebar-select">
                                 <option value="">-Статус-</option>
                                 <option value="sale">Продаж</option>
                                 <option value="rent">Оренда</option>
@@ -298,8 +298,8 @@
                                 <label>Ціновий діапазон ($):</label>
                                 <div class="dual-slider" data-min="2000" data-max="1000000" data-step="1000">
                                     <div class="slider-track"></div>
-                                    <input type="range" class="min-val" value="2000" min="2000" max="1000000" step="1000">
-                                    <input type="range" class="max-val" value="1000000" min="2000" max="1000000" step="1000">
+                                    <input type="range" class="min-val" name="minPrice" id="minPrice" value="2000" min="2000" max="1000000" step="1000">
+                                    <input type="range" class="max-val" name="maxPrice" id="maxPrice" value="1000000" min="2000" max="1000000" step="1000">
                                 </div>
                                 <div class="range-labels">
                                     <span class="min-label">2000$</span>
@@ -311,8 +311,8 @@
                                 <label>Площа (m2) :</label>
                                 <div class="dual-slider" data-min="40" data-max="12000" data-step="10">
                                     <div class="slider-track"></div>
-                                    <input type="range" class="min-val" value="40" min="40" max="12000" step="10">
-                                    <input type="range" class="max-val" value="12000" min="40" max="12000" step="10">
+                                    <input type="range" class="min-val" name="minArea" id="minArea" value="40" min="40" max="12000" step="10">
+                                    <input type="range" class="max-val" name="maxArea" id="maxArea" value="12000" min="40" max="12000" step="10">
                                 </div>
                                 <div class="range-labels">
                                     <span class="min-label">40</span>
@@ -325,8 +325,8 @@
                                     <label>Мін. кількість ванн :</label>
                                     <div class="dual-slider" data-min="1" data-max="120" data-step="1">
                                         <div class="slider-track"></div>
-                                        <input type="range" class="min-val" value="1" min="1" max="120" step="1">
-                                        <input type="range" class="max-val" value="120" min="1" max="120" step="1">
+                                        <input type="range" class="min-val" name="minBaths" id="minBaths" value="1" min="1" max="120" step="1">
+                                        <input type="range" class="max-val" name="maxBaths" id="maxBaths" value="120" min="1" max="120" step="1">
                                     </div>
                                     <div class="range-labels">
                                         <span class="min-label">1</span>
@@ -338,8 +338,8 @@
                                     <label>Мін. кількість спальних кімнат :</label>
                                     <div class="dual-slider" data-min="1" data-max="120" data-step="1">
                                         <div class="slider-track"></div>
-                                        <input type="range" class="min-val" value="1" min="1" max="120" step="1">
-                                        <input type="range" class="max-val" value="120" min="1" max="120" step="1">
+                                        <input type="range" class="min-val" name="minBeds" id="minBeds" value="1" min="1" max="120" step="1">
+                                        <input type="range" class="max-val" name="maxBeds" id="maxBeds" value="120" min="1" max="120" step="1">
                                     </div>
                                     <div class="range-labels">
                                         <span class="min-label">1</span>
@@ -351,53 +351,53 @@
 
                         <div class="checkbox-grid">
                             <label class="custom-checkbox">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" name="features" value="fireplace" checked>
                                 <span class="checkmark"></span>
                                 Камін
                             </label>
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" name="features" value="dual_sinks">
                                 <span class="checkmark"></span>
                                 Подвійні раковини
                             </label>
                             <label class="custom-checkbox">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" name="features" value="pool" checked>
                                 <span class="checkmark"></span>
                                 Бассейн
                             </label>
                             <label class="custom-checkbox">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" name="features" value="2_stories" checked>
                                 <span class="checkmark"></span>
                                 2 Поверхи
                             </label>
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" name="features" value="laundry">
                                 <span class="checkmark"></span>
                                 Пральня
                             </label>
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" name="features" value="emergency_exit">
                                 <span class="checkmark"></span>
                                 Запасний вихід
                             </label>
                             <label class="custom-checkbox">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" name="features" value="jog_path" checked>
                                 <span class="checkmark"></span>
                                 Шлях для бігу
                             </label>
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" name="features" value="ceilings_26">
                                 <span class="checkmark"></span>
                                 26-футова стеля
                             </label>
                             <label class="custom-checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" name="features" value="hurricane_shutters">
                                 <span class="checkmark"></span>
                                 Ураганні віконниці
                             </label>
                         </div>
 
-                        <button type="button" class="btn btn--search btn--full">Search</button>
+                        <button type="submit" class="btn btn--search btn--full">Search</button>
                     </form>
                 </div>
             </aside>
@@ -409,7 +409,7 @@
         <div class="container footer-grid">
             
             <div class="footer-col">
-                <h5 class="footer-title">ПРО НАС</h5>
+                <h4 class="footer-title">ПРО НАС</h4>
                 <div class="footer-logo">
                     <img src="assets/img/logo.png" alt="Garo Estate">
                 </div>
@@ -431,22 +431,22 @@
             </div>
 
             <div class="footer-col">
-                <h5 class="footer-title">ШВИДКІ ПОСИЛАННЯ</h5>
+                <h4 class="footer-title">ШВИДКІ ПОСИЛАННЯ</h4>
                 <ul class="footer-links">
-                    <li><a href="properties.html">ВЛАСНОСТІ</a></li>
+                    <li><a href="properties.html">КАТАЛОГ</a></li>
                     <li><a href="services.html">ПОСЛУГИ</a></li>
                     <li><a href="contact.html">ЗВ'ЯЗАТИСЬ З НАМИ</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h5 class="footer-title">ОСТАННІ НОВИНИ</h5>
+                <h4 class="footer-title">ОСТАННІ НОВИНИ</h4>
                 <div class="footer-news">
                     
                     <article class="news-item">
                         <div class="news-item__img">
                             <img src="assets/img/content/villa-1.webp" alt="Новина">
-                            <span class="news-date">12-12-2023</span>
+                            <span class="news-date">12-12-2026</span>
                         </div>
                         <div class="news-item__content">
                             <h6><a href="#">Нові функції пошуку</a></h6>
@@ -457,7 +457,7 @@
                     <article class="news-item">
                         <div class="news-item__img">
                             <img src="assets/img/content/villa-2.webp" alt="Новина">
-                            <span class="news-date">10-12-2023</span>
+                            <span class="news-date">10-12-2026</span>
                         </div>
                         <div class="news-item__content">
                             <h6><a href="#">Огляд ринку</a></h6>
@@ -468,7 +468,7 @@
                     <article class="news-item">
                         <div class="news-item__img">
                             <img src="assets/img/content/villa-3.webp" alt="Новина">
-                            <span class="news-date">05-12-2023</span>
+                            <span class="news-date">05-12-2026</span>
                         </div>
                         <div class="news-item__content">
                             <h6><a href="#">Поради інвесторам</a></h6>
@@ -480,7 +480,7 @@
             </div>
 
             <div class="footer-col">
-                <h5 class="footer-title">БУДЬТЕ НА ЗВ'ЯЗКУ</h5>
+                <h4 class="footer-title">БУДЬТЕ НА ЗВ'ЯЗКУ</h4>
                 <p class="footer-desc">Підпишіться на нашу розсилку, щоб першими отримувати найвигідніші пропозиції та новини ринку нерухомості.</p>
                 
                 <form class="footer-subscribe">
@@ -513,14 +513,14 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>(C) KimaroTheme , Всі права захищені 2024</p>
+                <p>(C) KimaroTheme , Всі права захищені 2026</p>
             </div>
         </div>
     </footer>
 
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-window">
-            <button class="modal-close" id="closeModalBtn" aria-label="Close">&times;</button>
+            <button class="modal-close" id="closeModalBtn" aria-label="Закрити">&times;</button>
             <h3>Авторизація</h3>
             <form class="modal-form">
                 <input type="text" placeholder="Логін чи Email" required>
@@ -530,6 +530,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

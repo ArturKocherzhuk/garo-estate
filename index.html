@@ -81,7 +81,7 @@
 
                 <div class="header-actions">
                     <button class="btn btn--login" id="openModalBtn">Увійти</button>
-                    <a href="contact.html" class="btn btn--submit">Надіслати повідомлення</a>
+                    <a href="properties.html" class="btn btn--submit">Подати оголошення</a>
                 </div>
             </div>
         </div>
@@ -93,18 +93,18 @@
                 <h1 class="hero-title">ПОШУК НЕРУХОМОСТІ ЩЕ НІКОЛИ НЕ БУВ ТАКИМ ЛЕГКИМ</h1>
                 <p class="hero-subtitle">Ми пропонуємо найкращі варіанти для купівлі та оренди. Знайдіть будинок вашої мрії швидко, надійно та без зайвих клопотів разом з Garo Estate!</p>
                 
-                <form class="hero-search-form" id="heroSearchForm" action="properties.html">
+                <form class="hero-search-form" id="heroSearchForm" action="properties.html" method="GET">
                     <div class="search-main-row">
                         <button type="button" class="btn-advanced-toggle" id="btnAdvancedToggle" aria-label="Розширений пошук">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
                         </button>
                         
                         <div class="input-group">
-                            <input type="text" id="searchKeyword" placeholder="Ключове слово" aria-label="Ключове слово">
+                            <input type="text" id="searchKeyword" name="keyword" placeholder="Ключове слово" aria-label="Ключове слово">
                         </div>
                         
                         <div class="input-group">
-                            <select id="searchCity" aria-label="Місто">
+                            <select id="searchCity" name="city" aria-label="Місто">
                                 <option value="">Оберіть ваше місто</option>
                                 <option value="Miami">Маямі</option>
                                 <option value="Coral Gables">Корал Гейблз</option>
@@ -112,7 +112,7 @@
                         </div>
 
                         <div class="input-group">
-                            <select id="searchStatus" aria-label="Статус">
+                            <select id="searchStatus" name="status" aria-label="Статус">
                                 <option value="">-Статус-</option>
                                 <option value="sale">На продаж</option>
                                 <option value="rent">В оренду</option>
@@ -147,8 +147,8 @@
                                     <input type="range" class="max-val" value="12000" min="40" max="12000" step="10">
                                 </div>
                                 <div class="range-labels">
-                                    <span class="min-label">40</span>
-                                    <span class="max-label">12000</span>
+                                    <span class="min-label">40m</span>
+                                    <span class="max-label">12000m</span>
                                 </div>
                             </div>
                         </div>
@@ -305,8 +305,9 @@
         </section>
 
         <section class="features-section" style="padding: 50px 0;">
+            <h2 style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">Особливості Garo Estate</h2>
             <div style="width: 100%; max-width: 1920px; margin: 0 auto;">
-                <img src="assets/img/content/features-building.webp" alt="Особливості Garo Estate" style="width: 100%; display: block; object-fit: cover;">
+                <img src="assets/img/content/features-building.webp" alt="Garo Estate Features" style="width: 100%; display: block; object-fit: cover;">
             </div>
         </section>
 
@@ -463,7 +464,7 @@
                 </div>
 
                 <div class="cta-call">
-                    МАЄТЕ ПИТАННЯ? ТЕЛЕФОНУЙТЕ: <strong>+380 50 123 4567</strong>
+                    МАЄТЕ ПИТАННЯ? ТЕЛЕФОНУЙТЕ: <strong>+ 380-50-123-4567</strong>
                 </div>
             </div>
         </section>
@@ -473,7 +474,7 @@
         <div class="container footer-grid">
             
             <div class="footer-col">
-                <h5 class="footer-title">ПРО НАС</h5>
+                <h4 class="footer-title">ПРО НАС</h4>
                 <div class="footer-logo">
                     <img src="assets/img/logo.png" alt="Garo Estate">
                 </div>
@@ -495,7 +496,7 @@
             </div>
 
             <div class="footer-col">
-                <h5 class="footer-title">ШВИДКІ ПОСИЛАННЯ</h5>
+                <h4 class="footer-title">ШВИДКІ ПОСИЛАННЯ</h4>
                 <ul class="footer-links">
                     <li><a href="properties.html">КАТАЛОГ</a></li>
                     <li><a href="services.html">ПОСЛУГИ</a></li>
@@ -504,13 +505,13 @@
             </div>
 
             <div class="footer-col">
-                <h5 class="footer-title">ОСТАННІ НОВИНИ</h5>
+                <h4 class="footer-title">ОСТАННІ НОВИНИ</h4>
                 <div class="footer-news">
                     
                     <article class="news-item">
                         <div class="news-item__img">
                             <img src="assets/img/content/villa-1.webp" alt="Новина">
-                            <span class="news-date">12-12-2023</span>
+                            <span class="news-date">12-12-2026</span>
                         </div>
                         <div class="news-item__content">
                             <h6><a href="#">Нові функції пошуку</a></h6>
@@ -521,7 +522,7 @@
                     <article class="news-item">
                         <div class="news-item__img">
                             <img src="assets/img/content/villa-2.webp" alt="Новина">
-                            <span class="news-date">10-12-2023</span>
+                            <span class="news-date">10-12-2026</span>
                         </div>
                         <div class="news-item__content">
                             <h6><a href="#">Огляд ринку</a></h6>
@@ -532,7 +533,7 @@
                     <article class="news-item">
                         <div class="news-item__img">
                             <img src="assets/img/content/villa-3.webp" alt="Новина">
-                            <span class="news-date">05-12-2023</span>
+                            <span class="news-date">05-12-2026</span>
                         </div>
                         <div class="news-item__content">
                             <h6><a href="#">Поради інвесторам</a></h6>
@@ -544,7 +545,7 @@
             </div>
 
             <div class="footer-col">
-                <h5 class="footer-title">БУДЬТЕ НА ЗВ'ЯЗКУ</h5>
+                <h4 class="footer-title">БУДЬТЕ НА ЗВ'ЯЗКУ</h4>
                 <p class="footer-desc">Підпишіться на нашу розсилку, щоб першими отримувати найвигідніші пропозиції та новини ринку нерухомості.</p>
                 
                 <form class="footer-subscribe">
@@ -577,7 +578,7 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>(C) Garo Estate, Всі права захищено 2024</p>
+                <p>(C) Garo Estate, Всі права захищено 2026</p>
             </div>
         </div>
     </footer>
