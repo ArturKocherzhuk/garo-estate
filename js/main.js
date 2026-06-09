@@ -18,7 +18,6 @@ const propertiesData = [
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    // Автоматичне визначення активного пункту меню
     const navLinks = document.querySelectorAll('.nav-link');
     let currentPath = window.location.pathname.split('/').pop();
     
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Burger Menu
     const burgerToggle = document.getElementById("burgerToggle");
     const mainNav = document.getElementById("mainNav");
 
@@ -44,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Modal Window (Login)
     const openModalBtn = document.getElementById("openModalBtn");
     const modalOverlay = document.getElementById("modalOverlay");
     const closeModalBtn = document.getElementById("closeModalBtn");
@@ -65,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Логіка для форми контактів
     const contactForm = document.getElementById("contactForm");
     const successModalOverlay = document.getElementById("successModalOverlay");
     const closeSuccessModalBtn = document.getElementById("closeSuccessModalBtn");
@@ -92,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Advanced Search Toggle
     const btnAdvancedToggle = document.getElementById("btnAdvancedToggle");
     const advancedSearchPanel = document.getElementById("advancedSearchPanel");
     
@@ -102,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Swiper Slider
     if (typeof Swiper !== 'undefined') {
         const swiperElement = document.querySelector('.reviews-slider');
         if (swiperElement) {
@@ -124,7 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Counters
     const counters = document.querySelectorAll('.counter-number');
     const speed = 200;
 
@@ -160,7 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Properties Catalog Logic
     const propertiesCatalog = document.getElementById("propertiesCatalog");
     const filterForm = document.getElementById("filterForm");
     const paginationContainer = document.getElementById("paginationContainer");
@@ -172,7 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentPage = 1;
     let itemsPerPage = 12;
 
-    // ФУНКЦІЯ ФІЛЬТРАЦІЇ (працює і при завантаженні, і при кліку на "Шукати")
     function applyFilters() {
         const keyword = document.getElementById("searchKeyword") ? document.getElementById("searchKeyword").value.toLowerCase() : "";
         const city = document.getElementById("searchCity") ? document.getElementById("searchCity").value.toLowerCase() : "";
@@ -209,7 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCatalog();
     }
 
-    // Читання параметрів з URL (перенесення вибору з інших сторінок)
     const urlParams = new URLSearchParams(window.location.search);
     let hasUrlParams = Array.from(urlParams).length > 0;
 
@@ -227,7 +217,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (urlParams.has('minBeds') && document.getElementById("minBeds")) document.getElementById("minBeds").value = urlParams.get('minBeds');
         if (urlParams.has('maxBeds') && document.getElementById("maxBeds")) document.getElementById("maxBeds").value = urlParams.get('maxBeds');
 
-        // Відновлюємо стан чекбоксів
         if (urlParams.has('features')) {
             const features = urlParams.getAll('features');
             document.querySelectorAll('input[name="features"]').forEach(cb => {
@@ -346,22 +335,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (filterForm) {
         filterForm.addEventListener("submit", (e) => {
-            // Тільки якщо ми на сторінці каталогу, блокуємо перезавантаження і фільтруємо JS-ом
             if (propertiesCatalog && window.location.pathname.includes('properties.html')) {
                 e.preventDefault();
             } else {
-                return; // Якщо ми на іншій сторінці (напр. index або property-single), форма спрацює стандартно і перекине на каталог
             }
             
             applyFilters();
 
-            // Очищаємо параметри URL без перезавантаження сторінки (щоб лінк був красивим)
             const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
             window.history.pushState({path:newUrl},'',newUrl);
         });
     }
 
-    // Якщо ми на сторінці каталогу, застосовуємо фільтри з URL або просто рендеримо все
     if (propertiesCatalog) {
         if (hasUrlParams) {
             applyFilters();
@@ -432,7 +417,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Dynamic Single Property Content
     const singlePropertyContainer = document.getElementById("singlePropertyDetails");
     
     if (singlePropertyContainer && typeof propertiesData !== 'undefined') {
@@ -455,6 +439,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const translatedCity = currentProperty.city === 'miami' ? 'МАЯМІ' : 'КОРАЛ ГЕЙБЛЗ';
                 const translatedStatus = currentProperty.status === 'sale' ? 'Продаж' : 'Оренда';
                 
+                // Виправлений блок: інтегровано нативний відеоплеєр
                 singlePropertyContainer.innerHTML = `
                     <div class="prop-gallery">
                         <div class="prop-gallery__main">
@@ -552,11 +537,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="prop-section">
                         <h3 class="prop-section__title">Відео об'єкта</h3>
                         <div class="prop-video" id="propVideoContainer">
-                            <video src="assets/video/property.mp4" controls style="display:none; width: 100%; height: 400px; object-fit: cover; outline: none;"></video>
-                            <img src="assets/img/content/villa-3.webp" alt="Video Cover">
-                            <button class="play-btn">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                            </button>
+                            <video src="assets/video/house.mp4" controls poster="assets/img/content/villa-3.webp" style="width: 100%; border-radius: 12px; outline: none;"></video>
                         </div>
                     </div>
                 `;
@@ -625,25 +606,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-
-    function initVideo() {
-        const videoContainers = document.querySelectorAll('.prop-video');
-        videoContainers.forEach(container => {
-            const video = container.querySelector('video');
-            const cover = container.querySelector('img');
-            const playBtn = container.querySelector('.play-btn');
-            
-            if (video && cover && playBtn && !playBtn.dataset.videoInit) {
-                playBtn.dataset.videoInit = "true";
-                playBtn.addEventListener('click', () => {
-                    cover.style.display = 'none';
-                    playBtn.style.display = 'none';
-                    video.style.display = 'block';
-                    video.play();
-                });
-            }
-        });
-    }
     
     function initFavoriteBtn() {
         const favoriteBtn = document.getElementById("favoriteBtn") || document.querySelector('.prop-gallery__actions button:first-child');
@@ -656,7 +618,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     initGallery();
-    initVideo(); 
     initFavoriteBtn(); 
 
     const dualSliders = document.querySelectorAll('.dual-slider');

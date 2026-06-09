@@ -169,9 +169,6 @@ ul {
     color: #333333;
 }
 
-/* ========================================= */
-/* КНОПКИ LOGIN ТА SUBMIT (МОБІЛЬНА ВЕРСІЯ)  */
-/* ========================================= */
 .header-actions {
     position: fixed;
     bottom: 40px;
@@ -185,7 +182,6 @@ ul {
     transition: var(--transition);
 }
 
-/* Кнопки виїжджають разом із бургер-меню */
 .burger-menu.active ~ .header-actions {
     right: 0;
 }
@@ -218,7 +214,6 @@ ul {
     background-color: #b3b3b3;
 }
 
-/* ========================================= */
 
 .hero-section {
     background: url('../assets/img/content/hero-bg.webp') center/cover no-repeat;
@@ -1429,7 +1424,6 @@ ul {
     transition: all 0.3s;
 }
 
-/* ДОДАНО КЛАС .active ДЛЯ ЗІРОЧКИ */
 .prop-gallery__actions button:hover,
 .prop-gallery__actions button.active {
     background: var(--color-primary);
@@ -1602,7 +1596,7 @@ ul {
 }
 
 .prop-video video {
-    display: none;
+    display: block;
     width: 100%;
     outline: none;
 }
@@ -1823,10 +1817,6 @@ ul {
 .contact-info-list li svg {
     color: var(--color-primary);
 }
-
-/* ========================================= */
-/* MAIN SEARCH FORM (ADVANCED TOGGLE)        */
-/* ========================================= */
 
 .search-main-row {
     display: flex;
@@ -2113,7 +2103,6 @@ ul {
         background-color: var(--color-primary);
     }
     
-    /* Відновлюємо розташування кнопок для комп'ютера */
     .header-actions {
         position: static;
         width: auto;
